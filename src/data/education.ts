@@ -8,7 +8,7 @@ export interface AcademicRecord {
   scoreValue: string;
   highlights: string[];
   coursework: string[];
-  status: "Completed" | "In Progress";
+  status: "In Progress" | "Completed";
   badgeColor: string;
 }
 
@@ -16,47 +16,68 @@ export const EDUCATION_RECORDS: AcademicRecord[] = [
   {
     id: "btech-ce",
     degree: "B.Tech in Computer Engineering",
-    institution: "Vidyalankar Institute of Technology (VIT)",
-    location: "Mumbai, Maharashtra",
+    institution: "Vidyalankar Institute of Technology",
+    location: "Mumbai",
     period: "2025 – 2028",
-    scoreLabel: "Academic Performance",
-    scoreValue: "SGPA 9.19 (Sem 4) | SGPA 8.4 (Sem 3)",
+    scoreLabel: "Academic Trajectory",
+    scoreValue: "2025 – 2028",
     highlights: [
-      "Specialization Direction: Artificial Intelligence & Machine Learning",
-      "Architected Campus 1 AI platform for institution-wide deployment",
-      "Consistent high academic performance across all semesters"
+      "Pursuing B.Tech in Computer Engineering at Vidyalankar Institute of Technology, Mumbai",
+      "Focusing on software development, problem-solving, and technology management",
+      "Building practical academic projects across web and mobile platforms"
     ],
     coursework: [
-      "Artificial Intelligence & ML",
-      "Advanced Data Structures & Algorithms",
-      "Database Management Systems",
-      "Operating Systems & Architecture",
-      "Web Engineering & Cloud Services"
+      "Computer Engineering Core",
+      "Data Structures & Algorithms",
+      "Database Systems",
+      "Software Development",
+      "Object-Oriented Programming"
     ],
     status: "In Progress",
     badgeColor: "emerald"
   },
   {
-    id: "diploma-it",
-    degree: "Diploma in Information Technology",
+    id: "diploma-ce",
+    degree: "Diploma in Computer Engineering",
     institution: "V.P.M's Polytechnic",
-    location: "Thane, Maharashtra",
+    location: "Thane",
     period: "2022 – 2025",
-    scoreLabel: "Final Distinction Score",
+    scoreLabel: "Percentage Score",
     scoreValue: "91.40%",
     highlights: [
-      "Secured top academic distinction with 91.40% overall score",
-      "Developed Android & Java based capstone software applications",
-      "Mastered low-level algorithms in C and object-oriented programming in Java"
+      "Graduated with 91.40% distinction score",
+      "Built strong foundation in C, C++, Java, and Web Technologies",
+      "Developed Plant Caring mobile application and academic software systems"
     ],
     coursework: [
-      "Object-Oriented Programming (Java)",
-      "Relational Database Systems (SQL)",
-      "Software Engineering & Testing",
-      "Data Communication & Networking",
-      "GUI & Web Development"
+      "C & C++ Programming",
+      "Java Application Development",
+      "Relational Databases & SQL",
+      "Operating Systems (Linux, Windows)",
+      "Web Technologies (HTML, CSS, JavaScript)"
     ],
     status: "Completed",
     badgeColor: "cyan"
+  },
+  {
+    id: "ssc-cbse",
+    degree: "Secondary School Certificate (CBSE)",
+    institution: "Lok Puram Public School",
+    location: "Thane",
+    period: "2022",
+    scoreLabel: "Board Percentage",
+    scoreValue: "90.40%",
+    highlights: [
+      "Scored 90.40% in CBSE Secondary School Certificate",
+      "Demonstrated strong analytical and problem-solving aptitude",
+      "Active participant in extracurricular competitions and teamwork initiatives"
+    ],
+    coursework: [
+      "Mathematics & Science",
+      "Computer Applications",
+      "English & Hindi"
+    ],
+    status: "Completed",
+    badgeColor: "violet"
   }
 ];

@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
-import { GitBranch, GitCommit, Code, ExternalLink } from 'lucide-react';
+import { GitBranch, GitCommit, Code } from 'lucide-react';
 import { generateActivityGrid, TECH_DISTRIBUTION } from '../../data/activity';
 import { SpotlightCard } from '../ui/SpotlightCard';
-import { PROFILE_DATA } from '../../data/profile';
 
 export const GitHubActivityPanel: React.FC = () => {
   const activityDays = useMemo(() => generateActivityGrid(), []);
@@ -28,7 +27,7 @@ export const GitHubActivityPanel: React.FC = () => {
           Code Velocity & <span className="text-cyan-400">Activity</span>
         </h2>
         <p className="text-slate-400 max-w-xl mx-auto text-sm">
-          Simulated active engineering telemetry, repository contributions, and primary language distribution.
+          Engineering activity telemetry, project contributions, and core language distribution.
         </p>
       </div>
 
@@ -42,19 +41,13 @@ export const GitHubActivityPanel: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg font-heading">Commit Frequency Matrix</h3>
-                <p className="text-xs font-mono text-slate-400">Recent Build & Deployment Cycles</p>
+                <p className="text-xs font-mono text-slate-400">Recent Build & Development Cycles</p>
               </div>
             </div>
 
-            <a
-              href={PROFILE_DATA.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-mono text-cyan-300 hover:bg-slate-800 transition-all flex items-center gap-1.5"
-            >
-              <span>github.com/krishna942007</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+            <div className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-mono text-cyan-300">
+              Active Repository Status
+            </div>
           </div>
 
           {/* Activity Heatmap Grid */}
@@ -91,7 +84,7 @@ export const GitHubActivityPanel: React.FC = () => {
             </div>
             <div>
               <h3 className="font-bold text-white text-lg font-heading">Language Mix</h3>
-              <p className="text-xs font-mono text-slate-400">Production Code Distribution</p>
+              <p className="text-xs font-mono text-slate-400">Skill Distribution</p>
             </div>
           </div>
 

@@ -4,75 +4,71 @@ export interface ProfileData {
   role: string;
   headline: string;
   subheadline: string;
+  careerObjective: string;
   location: string;
+  phone: string;
   institution: string;
   degree: string;
   diploma: string;
-  sgpa3: number;
-  sgpa4: number;
   diplomaPercentage: number;
+  sscPercentage: number;
   status: string;
   availability: string;
   bio: string[];
-  interests: string[];
-  hobbies: { icon: string; name: string; description: string }[];
+  softSkills: string[];
+  languages: string[];
   socials: {
-    github: string;
-    linkedin: string;
     email: string;
-    twitter?: string;
+    phone: string;
   };
   metrics: {
-    projectsCompleted: number;
-    hackathonsEntered: number;
-    codeCommits: number;
-    currentSgpa: number;
+    projectsCount: number;
+    diplomaScore: number;
+    sscScore: number;
+    awardsCount: number;
   };
 }
 
 export const PROFILE_DATA: ProfileData = {
-  name: "Krishna Singh",
-  badgeId: "DEV-2026-KS942",
-  role: "Computer Engineering Student • Developer • AI/ML • Full Stack",
-  headline: "Building intelligent software with code, curiosity and AI.",
-  subheadline: "Developer → AI/ML → Intelligent Software → Experimentation → Continuous Learning",
-  location: "Mumbai, Maharashtra, India",
-  institution: "Vidyalankar Institute of Technology (VIT), Mumbai",
+  name: "Aditi Singh",
+  badgeId: "CE-2025-AS609",
+  role: "Computer Engineering Graduate",
+  headline: "Computer Engineering Graduate",
+  subheadline: "Software Development • Problem Solving • Teamwork • Technology & Management",
+  careerObjective:
+    "Motivated and detail-oriented Computer Engineering student with a strong foundation in software development, problem-solving, and teamwork. Eager to contribute technical and communication skills in academic projects, internships, and future career opportunities, while continuing to grow knowledge in both technology and management domains.",
+  location: "B5/304, Brahmand Phase 3, Azadnagar, Thane (W)",
+  phone: "+91 704509771116",
+  institution: "Vidyalankar Institute of Technology, Mumbai",
   degree: "B.Tech in Computer Engineering (2025 – 2028)",
-  diploma: "Diploma in Information Technology (V.P.M's Polytechnic) - 91.40%",
-  sgpa3: 8.4,
-  sgpa4: 9.19,
+  diploma: "Diploma in Computer Engineering – V.P.M's Polytechnic, Thane (91.40%)",
   diplomaPercentage: 91.40,
-  status: "ACTIVE_BUILDING",
-  availability: "Open for AI/ML & Full-Stack Projects",
+  sscPercentage: 90.40,
+  status: "ACTIVE_OPPORTUNITY",
+  availability: "Open for Software & Academic Opportunities",
   bio: [
-    "I am a Computer Engineering student with a Diploma in Information Technology, specializing in Full-Stack Web Architecture, Interactive UI Design, and Artificial Intelligence.",
-    "My engineering philosophy centers around speed, efficiency, and real-world applicability. I don't just build UI; I craft digital operating systems that integrate AI assistants, grounded knowledge bases, and intuitive workflows.",
-    "From hackathon platforms like Campus 1 and Jaal to AI experimental software like NeuroFlow, I constantly bridge the gap between frontend craft, backend robustness, and emerging machine learning capabilities."
+    "Motivated and detail-oriented Computer Engineering student with a strong foundation in software development, problem-solving, and teamwork.",
+    "Experienced in academic projects including full-stack web platforms (Studio Vyakhya) and mobile application development (Plant Caring App in Java/Android Studio), alongside web design internship experience at CareerRaiser.",
+    "Eager to contribute technical and communication skills in academic projects, internships, and future career opportunities, while continuing to grow knowledge in both technology and management domains."
   ],
-  interests: [
-    "AI / AI-ML Systems",
-    "Full-Stack Web Development",
-    "Interactive UI & WebGL Animation",
-    "Developer Tools & Efficiency",
-    "Grounded AI Mentorship Engines",
-    "Machine Learning Integration"
+  softSkills: [
+    "Communication Skills",
+    "Teamwork & Collaboration",
+    "Leadership",
+    "Presentation Skills"
   ],
-  hobbies: [
-    { icon: "Music", name: "Music & Guitar", description: "Acoustic & Electric Guitar jamming" },
-    { icon: "Mic", name: "Singing", description: "Vocal sessions and melody composition" },
-    { icon: "Utensils", name: "Cooking", description: "Culinary experiments & fusion recipes" },
-    { icon: "Cpu", name: "Tech Experimentation", description: "Testing new developer tools, models, & frameworks" }
+  languages: [
+    "English",
+    "Hindi"
   ],
   socials: {
-    github: "https://github.com/krishna942007",
-    linkedin: "https://linkedin.com/in/krishna942007",
-    email: "krishnasd7869@gmail.com",
+    email: "aditi60911@gmail.com",
+    phone: "+91 704509771116"
   },
   metrics: {
-    projectsCompleted: 8,
-    hackathonsEntered: 4,
-    codeCommits: 450,
-    currentSgpa: 9.19
+    projectsCount: 2,
+    diplomaScore: 91.40,
+    sscScore: 90.40,
+    awardsCount: 2
   }
 };

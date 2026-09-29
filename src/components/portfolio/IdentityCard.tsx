@@ -4,13 +4,13 @@ import {
   ShieldCheck, 
   MapPin, 
   Mail, 
+  Phone,
   QrCode, 
   Sparkles,
   Cpu,
   RotateCw
 } from 'lucide-react';
 import { PROFILE_DATA } from '../../data/profile';
-import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
 
 export const IdentityCard: React.FC = () => {
   const [rotateX, setRotateX] = useState(0);
@@ -48,7 +48,7 @@ export const IdentityCard: React.FC = () => {
           Developer ID & <span className="text-cyan-400">Credentials</span>
         </h2>
         <p className="text-slate-400 max-w-xl mx-auto text-sm">
-          Interactive holographic identification card representing Krishna's academic & technical credentials.
+          Interactive identification badge representing Aditi Singh's verified academic & technical credentials.
         </p>
       </div>
 
@@ -75,7 +75,7 @@ export const IdentityCard: React.FC = () => {
                   <Cpu className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono text-cyan-400 tracking-wider">DEV OPERATING SYSTEM</div>
+                  <div className="text-[10px] font-mono text-cyan-400 tracking-wider">ENGINEERING ARCHIVE</div>
                   <div className="text-xs font-bold text-slate-200">IDENTIFICATION BADGE</div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export const IdentityCard: React.FC = () => {
                   <div className="relative">
                     <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-cyan-500 via-teal-500 to-violet-600 p-0.5 shadow-lg shadow-cyan-500/20">
                       <div className="w-full h-full rounded-[14px] bg-slate-950 flex items-center justify-center text-2xl font-extrabold text-cyan-300 font-mono">
-                        KS
+                        AS
                       </div>
                     </div>
                     <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-slate-900 flex items-center justify-center">
@@ -103,10 +103,10 @@ export const IdentityCard: React.FC = () => {
 
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white font-heading tracking-tight">{PROFILE_DATA.name}</h3>
-                    <p className="text-xs text-cyan-400 font-mono font-medium mt-0.5">Computer Engineering Student</p>
+                    <p className="text-xs text-cyan-400 font-mono font-medium mt-0.5">{PROFILE_DATA.role}</p>
                     <p className="text-xs text-slate-400 mt-1 flex items-center gap-1">
                       <MapPin className="w-3 h-3 text-cyan-400 shrink-0" />
-                      {PROFILE_DATA.location}
+                      Thane (W), Mumbai
                     </p>
                   </div>
                 </div>
@@ -114,22 +114,22 @@ export const IdentityCard: React.FC = () => {
                 {/* Academic & Role Badges */}
                 <div className="space-y-2 font-mono text-xs">
                   <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-300">
-                    <span className="text-slate-500">INSTITUTION:</span>
-                    <span className="text-cyan-200 font-semibold truncate ml-2">VIT Mumbai (B.Tech)</span>
+                    <span className="text-slate-500">EDUCATION:</span>
+                    <span className="text-cyan-200 font-semibold truncate ml-2">Vidyalankar Inst. of Tech. (B.Tech)</span>
                   </div>
                   <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-300">
-                    <span className="text-slate-500">DIPLOMA IT:</span>
-                    <span className="text-emerald-300 font-semibold">{PROFILE_DATA.diplomaPercentage}% Distinction</span>
+                    <span className="text-slate-500">DIPLOMA CE:</span>
+                    <span className="text-emerald-300 font-semibold">V.P.M's Polytechnic — 91.40%</span>
                   </div>
                   <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-300">
-                    <span className="text-slate-500">CURRENT SGPA:</span>
-                    <span className="text-amber-300 font-semibold">9.19 (4th Sem)</span>
+                    <span className="text-slate-500">SSC (CBSE):</span>
+                    <span className="text-violet-300 font-semibold">Lok Puram Public School — 90.40%</span>
                   </div>
                 </div>
 
-                {/* Tech Chips */}
+                {/* Relevant Technologies Chips */}
                 <div className="flex flex-wrap gap-1.5 pt-1">
-                  {["React", "Next.js", "Node.js", "Python", "MongoDB", "AI/ML", "TypeScript"].map((tech) => (
+                  {["C", "C++", "Java", "Python", "HTML", "CSS", "JavaScript", "SQL", "MongoDB"].map((tech) => (
                     <span key={tech} className="px-2.5 py-1 rounded-md bg-cyan-950/50 border border-cyan-800/40 text-[11px] font-mono text-cyan-300">
                       {tech}
                     </span>
@@ -158,52 +158,45 @@ export const IdentityCard: React.FC = () => {
               /* Back of Card Content */
               <div className="space-y-6 py-2">
                 <div className="text-xs font-mono text-cyan-400 border-b border-slate-800 pb-2 flex items-center justify-between">
-                  <span>TECHNICAL MINDSET & CONTACT</span>
+                  <span>CAREER OBJECTIVE & CONTACT</span>
                   <span className="text-slate-500">[BACK SIDE]</span>
                 </div>
 
                 <div className="space-y-3 text-xs text-slate-300 leading-relaxed font-sans">
                   <p className="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
-                    "Driven by high-efficiency software engineering, AI integration, and responsive user experiences."
+                    "{PROFILE_DATA.careerObjective}"
                   </p>
 
                   <div className="space-y-2 font-mono">
-                    <a 
-                      href={PROFILE_DATA.socials.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition-all"
-                    >
-                      <span className="flex items-center gap-2">
-                        <GithubIcon className="w-4 h-4 text-cyan-400" />
-                        GitHub Profile
-                      </span>
-                      <span className="text-slate-500">github.com/krishna942007</span>
-                    </a>
-
-                    <a 
-                      href={PROFILE_DATA.socials.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition-all"
-                    >
-                      <span className="flex items-center gap-2">
-                        <LinkedinIcon className="w-4 h-4 text-cyan-400" />
-                        LinkedIn Profile
-                      </span>
-                      <span className="text-slate-500">krishna942007</span>
-                    </a>
-
                     <a 
                       href={`mailto:${PROFILE_DATA.socials.email}`}
                       className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition-all"
                     >
                       <span className="flex items-center gap-2">
                         <Mail className="w-4 h-4 text-cyan-400" />
-                        Direct Email
+                        Email
                       </span>
-                      <span className="text-slate-500">{PROFILE_DATA.socials.email}</span>
+                      <span className="text-slate-400">{PROFILE_DATA.socials.email}</span>
                     </a>
+
+                    <a 
+                      href={`tel:${PROFILE_DATA.socials.phone}`}
+                      className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition-all"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-cyan-400" />
+                        Phone
+                      </span>
+                      <span className="text-slate-400">{PROFILE_DATA.socials.phone}</span>
+                    </a>
+
+                    <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs">
+                      <span className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-cyan-400" />
+                        Address
+                      </span>
+                      <span className="text-slate-400 text-right truncate ml-2">Thane (W)</span>
+                    </div>
                   </div>
                 </div>
 
@@ -224,28 +217,28 @@ export const IdentityCard: React.FC = () => {
           <div className="p-6 rounded-2xl glass-card space-y-4">
             <h3 className="text-lg font-bold text-white font-heading flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-cyan-400" />
-              Core Technical Identity
+              Core Academic & Technical Profile
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Krishna Singh is a Computer Engineering developer with a Diploma in IT, specializing in AI-ML integration, responsive web applications, and fast product development.
+              Aditi Singh is a motivated and detail-oriented Computer Engineering graduate with a strong foundation in software development, problem-solving, and teamwork.
             </p>
 
             <div className="grid grid-cols-2 gap-3 pt-2">
               <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-cyan-400">FOCUS AREA</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">AI/ML & Intelligent Software</div>
+                <div className="text-[11px] font-mono text-cyan-400">DEGREE</div>
+                <div className="text-xs font-semibold text-slate-200 mt-0.5">B.Tech in Computer Engg.</div>
               </div>
               <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-emerald-400">BUILD STYLE</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">Fast, Responsive, Practical</div>
+                <div className="text-[11px] font-mono text-emerald-400">DIPLOMA SCORE</div>
+                <div className="text-xs font-semibold text-slate-200 mt-0.5">91.40% (V.P.M's Poly.)</div>
               </div>
               <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-violet-400">ACADEMIC RECORD</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">SGPA 9.19 | Diploma 91.4%</div>
+                <div className="text-[11px] font-mono text-violet-400">SECONDARY (CBSE)</div>
+                <div className="text-xs font-semibold text-slate-200 mt-0.5">90.40% (Lok Puram)</div>
               </div>
               <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-amber-400">DIRECTION</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">Continuous Learning</div>
+                <div className="text-[11px] font-mono text-amber-400">INTERNSHIP</div>
+                <div className="text-xs font-semibold text-slate-200 mt-0.5">CareerRaiser (July 2024)</div>
               </div>
             </div>
           </div>

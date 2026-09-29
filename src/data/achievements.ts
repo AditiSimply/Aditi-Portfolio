@@ -1,7 +1,7 @@
 export interface AchievementItem {
   id: string;
   title: string;
-  category: "Hackathon" | "Academic" | "Design / Visual" | "Project Distinction";
+  category: "Hackathon" | "Competition";
   issuer: string;
   date: string;
   description: string;
@@ -12,42 +12,22 @@ export interface AchievementItem {
 export const ACHIEVEMENTS: AchievementItem[] = [
   {
     id: "ach-1",
-    title: "1st Prize — Internal SIH 2024",
+    title: "1st Prize – Internal SIH 2024",
     category: "Hackathon",
-    issuer: "Smart India Hackathon (VIT Selection)",
+    issuer: "Internal Smart India Hackathon 2024",
     date: "2024",
-    description: "Awarded First Place in the institutional Smart India Hackathon selection round for building Project Jaal—an emergency response network.",
+    description: "Secured 1st Prize in Internal Smart India Hackathon (SIH 2024) competition.",
     icon: "Trophy",
     accent: "from-amber-500/20 to-yellow-500/5"
   },
   {
     id: "ach-2",
     title: "Poster Making Competition Winner",
-    category: "Design / Visual",
-    issuer: "Institutional Cultural & Tech Fest",
+    category: "Competition",
+    issuer: "Poster Making Competition",
     date: "2024",
-    description: "Won First Place for visual storytelling, layout engineering, and poster design presentation.",
+    description: "Winner of the Poster Making Competition, demonstrating visual design, layout creativity, and communication skills.",
     icon: "Medal",
     accent: "from-cyan-500/20 to-blue-500/5"
-  },
-  {
-    id: "ach-3",
-    title: "Academic SGPA Milestone — 9.19",
-    category: "Academic",
-    issuer: "Vidyalankar Institute of Technology",
-    date: "2026",
-    description: "Achieved an impressive 9.19 SGPA in the 4th semester of B.Tech Computer Engineering.",
-    icon: "Star",
-    accent: "from-emerald-500/20 to-teal-500/5"
-  },
-  {
-    id: "ach-4",
-    title: "Diploma Distinction — 91.40%",
-    category: "Academic",
-    issuer: "V.P.M's Polytechnic",
-    date: "2025",
-    description: "Graduated with highest distinction (91.40%) in Diploma in Information Technology.",
-    icon: "Award",
-    accent: "from-purple-500/20 to-indigo-500/5"
   }
 ];

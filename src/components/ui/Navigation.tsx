@@ -82,7 +82,7 @@ export const Navigation: React.FC = () => {
             className="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all font-mono text-xs font-semibold mr-1"
           >
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-            KS.OS
+            AS.PORTFOLIO
           </button>
 
           {/* Dock Links */}
@@ -144,7 +144,7 @@ export const Navigation: React.FC = () => {
           className="flex items-center gap-2 font-mono text-sm font-bold text-slate-100"
         >
           <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-          KRISHNA SINGH <span className="text-cyan-400 text-xs">/ OS</span>
+          ADITI SINGH <span className="text-cyan-400 text-xs">/ PORTFOLIO</span>
         </button>
 
         <button

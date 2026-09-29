@@ -68,7 +68,7 @@ export const App: React.FC = () => {
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>
-              KRISHNA SINGH <span className="text-slate-600">//</span> PORTFOLIO OS v2.6
+              ADITI SINGH <span className="text-slate-600">//</span> PORTFOLIO ARCHIVE
             </span>
           </div>
 

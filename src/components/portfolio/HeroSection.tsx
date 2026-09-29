@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
-          <span className="tracking-wide">{PROFILE_DATA.status}</span>
+          <span className="tracking-wide">COMPUTER ENGINEERING GRADUATE</span>
           <span className="text-slate-600">|</span>
           <span className="text-slate-300 font-sans">{PROFILE_DATA.availability}</span>
         </motion.div>
@@ -42,7 +42,7 @@ export const HeroSection: React.FC = () => {
           className="space-y-4"
         >
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white font-heading">
-            KRISHNA <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-violet-400">SINGH</span>
+            ADITI <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-violet-400">SINGH</span>
           </h1>
 
           <p className="text-lg sm:text-2xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
@@ -51,31 +51,31 @@ export const HeroSection: React.FC = () => {
 
           <div className="pt-2 flex flex-wrap justify-center items-center gap-3 text-sm font-mono text-cyan-400">
             <span className="px-3 py-1 rounded-md bg-cyan-950/40 border border-cyan-800/40">
-              <DecryptedText text="AI / AI-ML" />
+              <DecryptedText text="SOFTWARE DEVELOPMENT" />
             </span>
             <span className="text-slate-600">•</span>
             <span className="px-3 py-1 rounded-md bg-violet-950/40 border border-violet-800/40">
-              <DecryptedText text="FULL-STACK WEB" />
+              <DecryptedText text="PROBLEM SOLVING" />
             </span>
             <span className="text-slate-600">•</span>
             <span className="px-3 py-1 rounded-md bg-emerald-950/40 border border-emerald-800/40">
-              <DecryptedText text="INTERACTIVE UI" />
+              <DecryptedText text="TEAMWORK" />
             </span>
             <span className="text-slate-600">•</span>
             <span className="px-3 py-1 rounded-md bg-amber-950/40 border border-amber-800/40">
-              <DecryptedText text="EMERGING TECH" />
+              <DecryptedText text="TECH & MANAGEMENT" />
             </span>
           </div>
         </motion.div>
 
-        {/* Tech Progression Subtitle */}
+        {/* Career Objective Text */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-xs sm:text-sm font-mono text-slate-400 max-w-2xl mx-auto bg-slate-900/50 py-2 px-4 rounded-xl border border-slate-800"
+          className="text-xs sm:text-sm font-sans text-slate-300 max-w-3xl mx-auto bg-slate-900/50 p-4 rounded-2xl border border-slate-800 leading-relaxed"
         >
-          {PROFILE_DATA.subheadline}
+          {PROFILE_DATA.careerObjective}
         </motion.p>
 
         {/* Quick Action CTA Buttons */}
@@ -83,7 +83,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center items-center gap-4 pt-4"
+          className="flex flex-wrap justify-center items-center gap-4 pt-2"
         >
           <Magnet magnetStrength={0.3}>
             <button
@@ -91,7 +91,7 @@ export const HeroSection: React.FC = () => {
               className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-sm tracking-wide shadow-lg shadow-cyan-500/25 flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95"
             >
               <Code className="w-4 h-4" />
-              Explore Project Archive
+              Explore Projects
             </button>
           </Magnet>
 
@@ -111,12 +111,12 @@ export const HeroSection: React.FC = () => {
               className="px-5 py-3.5 rounded-xl bg-violet-950/40 hover:bg-violet-900/40 border border-violet-800/60 text-violet-300 font-mono text-sm flex items-center gap-2 transition-all"
             >
               <Terminal className="w-4 h-4 text-violet-400" />
-              Open Channel
+              Get in Touch
             </button>
           </Magnet>
         </motion.div>
 
-        {/* Real Metrics Grid */}
+        {/* Verified Metrics Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -124,23 +124,31 @@ export const HeroSection: React.FC = () => {
           className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto pt-8 border-t border-slate-800/80"
         >
           <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">{PROFILE_DATA.metrics.projectsCompleted}+</div>
-            <div className="text-xs text-slate-400 font-sans mt-1">Live Projects</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">
+              {PROFILE_DATA.metrics.projectsCount}
+            </div>
+            <div className="text-xs text-slate-400 font-sans mt-1">Core Projects</div>
           </div>
 
           <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">{PROFILE_DATA.metrics.currentSgpa}</div>
-            <div className="text-xs text-slate-400 font-sans mt-1">4th Sem SGPA</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">
+              {PROFILE_DATA.diplomaPercentage}%
+            </div>
+            <div className="text-xs text-slate-400 font-sans mt-1">Diploma in CE</div>
           </div>
 
           <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-violet-400 font-mono">{PROFILE_DATA.diplomaPercentage}%</div>
-            <div className="text-xs text-slate-400 font-sans mt-1">Diploma IT Score</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-violet-400 font-mono">
+              {PROFILE_DATA.sscPercentage}%
+            </div>
+            <div className="text-xs text-slate-400 font-sans mt-1">SSC (CBSE)</div>
           </div>
 
           <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">{PROFILE_DATA.metrics.hackathonsEntered}</div>
-            <div className="text-xs text-slate-400 font-sans mt-1">SIH / Hackathons</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">
+              1st Prize
+            </div>
+            <div className="text-xs text-slate-400 font-sans mt-1">Internal SIH 2024</div>
           </div>
         </motion.div>
       </div>

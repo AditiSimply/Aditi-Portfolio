@@ -1,7 +1,7 @@
 export interface SkillItem {
   id: string;
   name: string;
-  category: "Frontend" | "Backend" | "Database" | "Programming" | "AI / ML" | "Tools & DevOps" | "Design / UI";
+  category: "Programming" | "Web" | "Database" | "Operating Systems" | "Soft Skills";
   iconName: string;
   context: string;
   relatedProjects: string[];
@@ -10,225 +10,156 @@ export interface SkillItem {
 
 export const SKILL_CATEGORIES = [
   "All",
-  "AI / ML",
-  "Frontend",
-  "Backend",
-  "Database",
   "Programming",
-  "Tools & DevOps",
-  "Design / UI"
+  "Web",
+  "Database",
+  "Operating Systems",
+  "Soft Skills"
 ] as const;
 
 export const SKILLS: SkillItem[] = [
-  // AI / ML
-  {
-    id: "gemini-api",
-    name: "Gemini 2.0 API & RAG",
-    category: "AI / ML",
-    iconName: "BrainCircuit",
-    context: "Building grounded knowledge search, institutional AI assistants, prompt security, and context compression.",
-    relatedProjects: ["Campus 1", "NeuroFlow"],
-    featured: true
-  },
-  {
-    id: "llm-integration",
-    name: "LLM Orchestration & Prompting",
-    category: "AI / ML",
-    iconName: "Sparkles",
-    context: "Structuring micro-goal extractors, autonomous feedback loops, and intelligent recommendation pipelines.",
-    relatedProjects: ["Campus 1", "NeuroFlow"],
-    featured: true
-  },
-  {
-    id: "ai-matchmaking",
-    name: "AI Mentor Matchmaking Algorithms",
-    category: "AI / ML",
-    iconName: "Workflow",
-    context: "Developing weighted multi-vector scoring algorithms (goals, domain, dept, course) for automated matchmaking.",
-    relatedProjects: ["Campus 1"],
-    featured: true
-  },
-
-  // Frontend
-  {
-    id: "react",
-    name: "React.js & Hooks",
-    category: "Frontend",
-    iconName: "Code2",
-    context: "Primary frontend library for complex state management, custom hooks, dynamic dashboards, and modular UI components.",
-    relatedProjects: ["Campus 1", "NeuroFlow", "Studio Vyakhya", "Jaal", "FitTrack Pro"],
-    featured: true
-  },
-  {
-    id: "nextjs",
-    name: "Next.js & Server Components",
-    category: "Frontend",
-    iconName: "Layers",
-    context: "Building high-performance SSR/SSG web applications, API routing, and optimized web platforms.",
-    relatedProjects: ["Campus 1", "NeuroFlow"],
-    featured: true
-  },
-  {
-    id: "typescript",
-    name: "TypeScript",
-    category: "Frontend",
-    iconName: "FileCode2",
-    context: "Writing type-safe, maintainable component libraries, strict API contracts, and robust interfaces.",
-    relatedProjects: ["Campus 1", "NeuroFlow"],
-    featured: true
-  },
-  {
-    id: "vite",
-    name: "Vite",
-    category: "Frontend",
-    iconName: "Zap",
-    context: "Rapid bundling, HMR, custom Vite plugin configurations, and production build optimizations.",
-    relatedProjects: ["Campus 1", "NeuroFlow"],
-    featured: false
-  },
-  {
-    id: "tailwindcss",
-    name: "Tailwind CSS",
-    category: "Frontend",
-    iconName: "Palette",
-    context: "Building modern responsive design systems, custom color tokens, glassmorphism, and utility-first styling.",
-    relatedProjects: ["Campus 1", "NeuroFlow", "Studio Vyakhya", "Jaal"],
-    featured: true
-  },
-  {
-    id: "framer-motion",
-    name: "Framer Motion & Micro-Animations",
-    category: "Frontend",
-    iconName: "Activity",
-    context: "Crafting fluid spring physics, magnetic hover effects, 3D card tilts, and smooth layout transitions.",
-    relatedProjects: ["Campus 1", "NeuroFlow"],
-    featured: true
-  },
-
-  // Backend
-  {
-    id: "nodejs",
-    name: "Node.js",
-    category: "Backend",
-    iconName: "Server",
-    context: "Developing asynchronous event-driven microservices, API gateways, and backend orchestration logic.",
-    relatedProjects: ["Campus 1", "Studio Vyakhya", "Jaal", "FitTrack Pro"],
-    featured: true
-  },
-  {
-    id: "express",
-    name: "Express.js",
-    category: "Backend",
-    iconName: "Network",
-    context: "Creating RESTful endpoints, role-based authorization middleware, rate limiting, and webhook integrations.",
-    relatedProjects: ["Campus 1", "Studio Vyakhya", "Jaal", "FitTrack Pro"],
-    featured: true
-  },
-  {
-    id: "rest-apis",
-    name: "REST APIs & Auth",
-    category: "Backend",
-    iconName: "KeyRound",
-    context: "JWT authentication, session isolation, multi-tenant RBAC, and secure token lifecycle management.",
-    relatedProjects: ["Campus 1", "Studio Vyakhya"],
-    featured: false
-  },
-
-  // Database
-  {
-    id: "mongodb",
-    name: "MongoDB & Mongoose",
-    category: "Database",
-    iconName: "Database",
-    context: "NoSQL document modeling, indexing strategies, pipeline aggregations, and MongoDB Atlas cloud deployment.",
-    relatedProjects: ["Campus 1", "Studio Vyakhya", "Jaal", "FitTrack Pro"],
-    featured: true
-  },
-  {
-    id: "sql-mysql",
-    name: "SQL & MySQL / PostgreSQL",
-    category: "Database",
-    iconName: "TableProperties",
-    context: "Relational database schema design, normalized joins, constraints, transaction safety, and query tuning.",
-    relatedProjects: ["Academic Projects"],
-    featured: false
-  },
-
   // Programming
   {
-    id: "javascript",
-    name: "JavaScript (ES6+)",
+    id: "c-lang",
+    name: "C",
     category: "Programming",
-    iconName: "FileJson",
-    context: "Core programming language for frontend logic, asynchronous promises, DOM manipulation, and Node runtime.",
-    relatedProjects: ["All Web Projects"],
+    iconName: "Cpu",
+    context: "Foundational programming language for low-level logic, procedural algorithms, and memory concepts.",
+    relatedProjects: ["Academic Coursework"],
+    featured: true
+  },
+  {
+    id: "cpp-lang",
+    name: "C++",
+    category: "Programming",
+    iconName: "Binary",
+    context: "Object-oriented programming, data structures, and computational problem-solving.",
+    relatedProjects: ["Academic Coursework"],
+    featured: true
+  },
+  {
+    id: "java",
+    name: "Java",
+    category: "Programming",
+    iconName: "Code2",
+    context: "Object-oriented architecture, Android mobile development, and core application development.",
+    relatedProjects: ["Plant Caring App"],
     featured: true
   },
   {
     id: "python",
     name: "Python",
     category: "Programming",
-    iconName: "Binary",
-    context: "Data manipulation, script automation, AI/ML experimentation, fast prototyping, and algorithmic analysis.",
-    relatedProjects: ["AI Experiments"],
+    iconName: "Sparkles",
+    context: "Scripting, algorithm implementation, and software development fundamentals.",
+    relatedProjects: ["Academic Coursework"],
+    featured: true
+  },
+
+  // Web
+  {
+    id: "html",
+    name: "HTML",
+    category: "Web",
+    iconName: "Layers",
+    context: "Semantic web structuring, modern document formatting, and accessible content markup.",
+    relatedProjects: ["Studio Vyakhya", "CareerRaiser Internship"],
     featured: true
   },
   {
-    id: "c-lang",
-    name: "C & C++",
-    category: "Programming",
-    iconName: "Cpu",
-    context: "Low-level memory management, data structures & algorithms, pointers, and foundational computer engineering.",
-    relatedProjects: ["Academic Core"],
+    id: "css",
+    name: "CSS",
+    category: "Web",
+    iconName: "Palette",
+    context: "Responsive styling, modern layouts, visual presentation, and UI/UX alignment.",
+    relatedProjects: ["Studio Vyakhya", "CareerRaiser Internship"],
+    featured: true
+  },
+  {
+    id: "js-basic",
+    name: "JavaScript (basic)",
+    category: "Web",
+    iconName: "FileJson",
+    context: "Client-side interactivity, DOM operations, and fundamental dynamic web logic.",
+    relatedProjects: ["Studio Vyakhya"],
+    featured: true
+  },
+
+  // Database
+  {
+    id: "sql",
+    name: "SQL",
+    category: "Database",
+    iconName: "TableProperties",
+    context: "Relational database querying, structured data modeling, and schema normalization.",
+    relatedProjects: ["Academic Coursework"],
+    featured: true
+  },
+  {
+    id: "mongodb-basic",
+    name: "MongoDB (basic)",
+    category: "Database",
+    iconName: "Database",
+    context: "Document database storage, NoSQL collections, and dynamic web application persistence.",
+    relatedProjects: ["Studio Vyakhya"],
     featured: false
   },
 
-  // Tools & DevOps
+  // Operating Systems
   {
-    id: "git-github",
-    name: "Git & GitHub",
-    category: "Tools & DevOps",
-    iconName: "GitBranch",
-    context: "Version control workflows, branching strategies, code reviews, GitHub Actions CI/CD automation.",
-    relatedProjects: ["All Projects"],
-    featured: true
-  },
-  {
-    id: "linux-cli",
-    name: "Linux & Terminal CLI",
-    category: "Tools & DevOps",
+    id: "linux-basic",
+    name: "Linux (basic)",
+    category: "Operating Systems",
     iconName: "Terminal",
-    context: "Shell scripting, process management, environment setup, package management, and server administration.",
-    relatedProjects: ["Dev Workflow"],
+    context: "Basic command line navigation, shell commands, and Unix file systems.",
+    relatedProjects: ["Academic Environment"],
     featured: false
   },
   {
-    id: "vercel",
-    name: "Vercel & Cloud Deployment",
-    category: "Tools & DevOps",
-    iconName: "Cloud",
-    context: "Deploying full-stack web platforms, configuring environment variables, continuous deployment, custom domains.",
-    relatedProjects: ["Campus 1", "NeuroFlow", "Studio Vyakhya"],
+    id: "windows-os",
+    name: "Windows",
+    category: "Operating Systems",
+    iconName: "Box",
+    context: "Standard desktop operating environment, software tooling, and development configuration.",
+    relatedProjects: ["General Workflow"],
     featured: false
   },
 
-  // Design / UI
+  // Soft Skills
   {
-    id: "interactive-ui",
-    name: "Interactive UI & 3D Cards",
-    category: "Design / UI",
-    iconName: "Box",
-    context: "Designing tactile digital objects, holographic ID badges, bookshelf cards, and micro-interactions.",
-    relatedProjects: ["Campus 1", "NeuroFlow"],
+    id: "comm-skills",
+    name: "Communication Skills",
+    category: "Soft Skills",
+    iconName: "Workflow",
+    context: "Articulating ideas clearly, collaborating with stakeholders, and technical documentation.",
+    relatedProjects: ["CareerRaiser Internship", "Team Projects"],
     featured: true
   },
   {
-    id: "ux-experimentation",
-    name: "UX/UI Experimentation",
-    category: "Design / UI",
-    iconName: "Layout",
-    context: "Crafting spatial rhythm, dark/light contrast discipline, WCAG accessibility, and visual storytelling.",
-    relatedProjects: ["Portfolio OS"],
+    id: "teamwork",
+    name: "Teamwork & Collaboration",
+    category: "Soft Skills",
+    iconName: "Workflow",
+    context: "Working cohesively in team environments, coordinating development efforts, and shared problem solving.",
+    relatedProjects: ["CareerRaiser Internship", "Hackathons"],
+    featured: true
+  },
+  {
+    id: "leadership",
+    name: "Leadership",
+    category: "Soft Skills",
+    iconName: "Workflow",
+    context: "Initiative taking, organizing tasks, and guiding group project execution.",
+    relatedProjects: ["Academic & Project Coordination"],
+    featured: false
+  },
+  {
+    id: "presentation-skills",
+    name: "Presentation Skills",
+    category: "Soft Skills",
+    iconName: "Workflow",
+    context: "Presenting project concepts, visual design layouts, and technical demonstrations effectively.",
+    relatedProjects: ["Poster Making Competition", "Academic Demos"],
     featured: true
   }
 ];

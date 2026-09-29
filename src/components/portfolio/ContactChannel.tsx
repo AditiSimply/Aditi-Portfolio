@@ -6,12 +6,12 @@ import {
   Check, 
   Send, 
   MessageSquare, 
-  ArrowUpRight
+  Phone,
+  MapPin
 } from 'lucide-react';
 import { PROFILE_DATA } from '../../data/profile';
 import { SpotlightCard } from '../ui/SpotlightCard';
 import { Magnet } from '../ui/Magnet';
-import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
 
 export const ContactChannel: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -41,10 +41,10 @@ export const ContactChannel: React.FC = () => {
           <span>09 // COMMUNICATION GATEWAY</span>
         </div>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
-          Open a <span className="text-violet-400">Direct Channel</span>
+          Get in Touch & <span className="text-violet-400">Contact</span>
         </h2>
         <p className="text-slate-400 max-w-xl mx-auto text-sm">
-          Interested in collaborating on AI software, full-stack platforms, or hackathon ventures? Let's build something remarkable.
+          Reach out directly via email, phone, or send a message regarding projects, internships, and opportunities.
         </p>
       </div>
 
@@ -57,14 +57,15 @@ export const ContactChannel: React.FC = () => {
               <span className="w-3 h-3 rounded-full bg-amber-500/80" />
               <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
             </div>
-            <span className="font-mono text-xs text-slate-500">channel::gateway.sh</span>
+            <span className="font-mono text-xs text-slate-500">contact::aditi.sh</span>
           </div>
 
           <div className="space-y-4 font-mono text-xs text-slate-300">
             <p className="text-slate-400">
-              # Direct contact coordinates for Krishna Singh:
+              # Verified contact details for Aditi Singh:
             </p>
 
+            {/* Email */}
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
               <div className="text-slate-500">$ echo $EMAIL</div>
               <div className="text-cyan-300 font-bold text-sm sm:text-base flex items-center justify-between">
@@ -84,42 +85,25 @@ export const ContactChannel: React.FC = () => {
               )}
             </div>
 
+            {/* Phone */}
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-              <div className="text-slate-500">$ status --telemetry</div>
-              <div className="text-emerald-400">● 100% OPERATIONAL // OPEN TO OPPORTUNITIES</div>
-              <div className="text-slate-400 text-[11px]">Location: {PROFILE_DATA.location}</div>
+              <div className="text-slate-500">$ echo $PHONE</div>
+              <a 
+                href={`tel:${PROFILE_DATA.socials.phone}`}
+                className="text-emerald-300 font-bold text-sm sm:text-base flex items-center gap-2 hover:underline"
+              >
+                <Phone className="w-4 h-4" />
+                <span>{PROFILE_DATA.socials.phone}</span>
+              </a>
             </div>
-          </div>
 
-          {/* Social Links */}
-          <div className="pt-2 space-y-2">
-            <div className="text-xs font-mono text-slate-400 uppercase tracking-wider">Social Nodes</div>
-            <div className="flex flex-col gap-2">
-              <a
-                href={PROFILE_DATA.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition-all text-xs font-mono"
-              >
-                <span className="flex items-center gap-2">
-                  <GithubIcon className="w-4 h-4 text-cyan-400" />
-                  GitHub: krishna942007
-                </span>
-                <ArrowUpRight className="w-4 h-4 text-slate-500" />
-              </a>
-
-              <a
-                href={PROFILE_DATA.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-violet-500/50 hover:text-violet-300 transition-all text-xs font-mono"
-              >
-                <span className="flex items-center gap-2">
-                  <LinkedinIcon className="w-4 h-4 text-violet-400" />
-                  LinkedIn: Krishna Singh
-                </span>
-                <ArrowUpRight className="w-4 h-4 text-slate-500" />
-              </a>
+            {/* Address */}
+            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <div className="text-slate-500">$ echo $LOCATION</div>
+              <div className="text-slate-300 text-xs flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <span>{PROFILE_DATA.location}</span>
+              </div>
             </div>
           </div>
         </SpotlightCard>
@@ -131,8 +115,8 @@ export const ContactChannel: React.FC = () => {
               <MessageSquare className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold text-white text-lg font-heading">Transmit Message</h3>
-              <p className="text-xs font-mono text-slate-400">Direct Message Buffer</p>
+              <h3 className="font-bold text-white text-lg font-heading">Send a Message</h3>
+              <p className="text-xs font-mono text-slate-400">Direct Inquiries & Opportunities</p>
             </div>
           </div>
 
@@ -145,19 +129,19 @@ export const ContactChannel: React.FC = () => {
               <div className="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
                 <Check className="w-6 h-6" />
               </div>
-              <h4 className="text-lg font-bold text-white font-heading">Transmission Queued</h4>
+              <h4 className="text-lg font-bold text-white font-heading">Message Sent</h4>
               <p className="text-xs text-slate-300">
-                Thank you! Your message packet has been dispatched. I will respond to your coordinates promptly.
+                Thank you! Your message has been received. I will get back to you promptly.
               </p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-mono text-slate-400 mb-1.5">YOUR IDENTIFIER (NAME)</label>
+                <label className="block text-xs font-mono text-slate-400 mb-1.5">NAME</label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Alex Chen"
+                  placeholder="Your Name"
                   value={formState.name}
                   onChange={e => setFormState({ ...formState, name: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 font-sans"
@@ -165,7 +149,7 @@ export const ContactChannel: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-400 mb-1.5">COMMUNICATION ENDPOINT (EMAIL)</label>
+                <label className="block text-xs font-mono text-slate-400 mb-1.5">EMAIL</label>
                 <input
                   type="email"
                   required
@@ -177,11 +161,11 @@ export const ContactChannel: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-400 mb-1.5">MESSAGE PAYLOAD</label>
+                <label className="block text-xs font-mono text-slate-400 mb-1.5">MESSAGE</label>
                 <textarea
                   rows={4}
                   required
-                  placeholder="Discuss a project, AI software architecture, or collaboration..."
+                  placeholder="Your message regarding opportunities, project inquiries, or collaboration..."
                   value={formState.message}
                   onChange={e => setFormState({ ...formState, message: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 font-sans custom-scrollbar resize-none"
@@ -194,7 +178,7 @@ export const ContactChannel: React.FC = () => {
                   className="w-full py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white font-bold text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-violet-950/40 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Transmit Transmission</span>
+                  <span>Send Message</span>
                 </button>
               </Magnet>
             </form>

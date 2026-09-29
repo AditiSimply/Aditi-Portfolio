@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# Aditi Singh — Interactive Developer Portfolio & Archive
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal interactive portfolio and developer archive for **Aditi Singh**, Computer Engineering Graduate.
 
-Currently, two official plugins are available:
+## Academic & Career Profile
+- **Degree**: B.Tech in Computer Engineering — Vidyalankar Institute of Technology, Mumbai (2025 – 2028)
+- **Diploma**: Diploma in Computer Engineering — V.P.M's Polytechnic, Thane (2022 – 2025 | 91.40%)
+- **Secondary**: SSC (CBSE) — Lok Puram Public School, Thane (2022 | 90.40%)
+- **Internship**: Web & Design Intern — CareerRaiser (July 2024)
+- **Achievements**: 
+  - 1st Prize – Internal SIH 2024
+  - Poster Making Competition Winner
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Core Technical Skills
+- **Programming**: C, C++, Java, Python
+- **Web**: HTML, CSS, JavaScript (basic)
+- **Database**: SQL, MongoDB (basic)
+- **Operating Systems**: Linux (basic), Windows
+- **Soft Skills**: Communication Skills, Teamwork & Collaboration, Leadership, Presentation Skills
+- **Languages**: English, Hindi
 
-## React Compiler
+## Featured Projects
+- **Studio Vyakhya**: Innovative interior design & workshop platform (React.js, Node.js & Express.js, MongoDB, Cloudinary, Razorpay).
+- **Plant Caring App**: Botanical care companion and watering reminder mobile application (Java Android Studio, XML UI).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the Oxlint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+# Start development server
+npm run dev
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+# Build for production
+npm run build
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

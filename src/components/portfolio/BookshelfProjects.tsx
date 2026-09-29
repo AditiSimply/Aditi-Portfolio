@@ -11,10 +11,7 @@ export const BookshelfProjects: React.FC = () => {
 
   const categories = [
     'All',
-    'AI/ML Platform',
     'Full-Stack Web',
-    'Hackathon Entry',
-    'Engineering Tool',
     'Mobile App'
   ];
 

@@ -2,20 +2,19 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Folder, 
-  Music, 
-  Mic, 
-  Utensils, 
   Cpu, 
-  Heart, 
   Sparkles,
   Compass,
   Code2,
-  Terminal
+  Terminal,
+  Languages,
+  Users,
+  Award
 } from 'lucide-react';
 import { SpotlightCard } from '../ui/SpotlightCard';
 
 export const PersonalArchive: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'mindset' | 'focus' | 'interests'>('mindset');
+  const [activeTab, setActiveTab] = useState<'profile' | 'focus' | 'competencies'>('profile');
 
   return (
     <section id="about" className="py-24 px-4 relative max-w-6xl mx-auto">
@@ -25,19 +24,19 @@ export const PersonalArchive: React.FC = () => {
           <span>02 // PERSONAL ARCHIVE</span>
         </div>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
-          How I Think, Build & <span className="text-violet-400">Explore</span>
+          Background, Mindset & <span className="text-violet-400">Competencies</span>
         </h2>
         <p className="text-slate-400 max-w-xl mx-auto text-sm">
-          Digital dossier documenting engineering principles, academic trajectory, and personal pursuits.
+          Overview of software development foundation, problem-solving abilities, teamwork, and career objective.
         </p>
       </div>
 
       {/* Tab Navigation Dossier Folders */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         {[
-          { id: 'mindset', label: '01. Development Philosophy', icon: Code2 },
-          { id: 'focus', label: '02. Current Direction & AI Focus', icon: Compass },
-          { id: 'interests', label: '03. Personal Interests & Hobbies', icon: Heart },
+          { id: 'profile', label: '01. Career Objective & Foundation', icon: Code2 },
+          { id: 'focus', label: '02. Growth in Tech & Management', icon: Compass },
+          { id: 'competencies', label: '03. Soft Skills & Languages', icon: Users },
         ].map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -60,9 +59,9 @@ export const PersonalArchive: React.FC = () => {
 
       {/* Dossier Content Cards */}
       <AnimatePresence mode="wait">
-        {activeTab === 'mindset' && (
+        {activeTab === 'profile' && (
           <motion.div
-            key="mindset"
+            key="profile"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
@@ -73,9 +72,9 @@ export const PersonalArchive: React.FC = () => {
               <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 w-fit">
                 <Terminal className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">High-Efficiency Craft</h3>
+              <h3 className="text-xl font-bold text-white font-heading">Software Development</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Building software shouldn't take months of boilerplate setup. I focus on fast, clean architecture using modern tools (React, Vite, Node, Tailwind) to ship functional products rapidly.
+                Strong engineering foundation in C, C++, Java, and Python alongside web technologies (HTML, CSS, basic JavaScript).
               </p>
             </SpotlightCard>
 
@@ -83,9 +82,9 @@ export const PersonalArchive: React.FC = () => {
               <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 w-fit">
                 <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Practical Product First</h3>
+              <h3 className="text-xl font-bold text-white font-heading">Problem Solving</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Technology is only useful when it solves real human problems. Platforms like Campus 1 and Jaal were designed to solve real institutional and hackathon challenges, not just showcase code snippets.
+                Structured, detail-oriented approach to resolving technical challenges, optimizing database queries with SQL and MongoDB, and developing practical solutions.
               </p>
             </SpotlightCard>
 
@@ -93,9 +92,9 @@ export const PersonalArchive: React.FC = () => {
               <div className="p-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 w-fit">
                 <Sparkles className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Continuous Experimentation</h3>
+              <h3 className="text-xl font-bold text-white font-heading">Teamwork & Collaboration</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Technology evolves daily. Whether it's prompt streaming, vector search, micro-animations, or state management patterns, I actively test and integrate emerging ideas.
+                Collaborative mindset demonstrated across academic group projects, the CareerRaiser web internship, and hackathon team achievements.
               </p>
             </SpotlightCard>
           </motion.div>
@@ -112,11 +111,11 @@ export const PersonalArchive: React.FC = () => {
           >
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
               <div>
-                <span className="text-xs font-mono text-cyan-400">CURRENT DIRECTION</span>
-                <h3 className="text-2xl font-bold text-white font-heading">Developer → AI/ML → Intelligent Software</h3>
+                <span className="text-xs font-mono text-cyan-400">CAREER OBJECTIVE</span>
+                <h3 className="text-2xl font-bold text-white font-heading">Continuous Growth in Technology & Management</h3>
               </div>
               <span className="px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800 text-cyan-300 font-mono text-xs">
-                Active Exploration Phase
+                Academic & Industry Ready
               </span>
             </div>
 
@@ -124,72 +123,72 @@ export const PersonalArchive: React.FC = () => {
               <div className="space-y-3">
                 <h4 className="font-semibold text-white flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-cyan-400" />
-                  AI Systems Integration
+                  Academic Excellence & Practical Projects
                 </h4>
                 <p className="leading-relaxed text-slate-400">
-                  Leveraging LLMs and generative models (Gemini 2.0 API, RAG, prompt security) to inject contextual intelligence into web applications rather than simple text completion.
+                  Secured 91.40% distinction in Diploma in Computer Engineering and 90.40% in CBSE Secondary Certificate. Built practical applications including Studio Vyakhya and Plant Caring App.
                 </p>
               </div>
 
               <div className="space-y-3">
                 <h4 className="font-semibold text-white flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                  Full-Stack Architecture & Security
+                  Technology & Management Domains
                 </h4>
                 <p className="leading-relaxed text-slate-400">
-                  Combining robust backend services (Express, MongoDB) with secure multi-tenant role authorization and intuitive frontend UI.
+                  Eager to contribute technical expertise and communication capabilities in software development and management roles, continuously broadening industry knowledge.
                 </p>
               </div>
             </div>
           </motion.div>
         )}
 
-        {activeTab === 'interests' && (
+        {activeTab === 'competencies' && (
           <motion.div
-            key="interests"
+            key="competencies"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
           >
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-amber-500/40 transition-all">
-              <div className="p-3 rounded-xl bg-amber-500/10 text-amber-400 w-fit">
-                <Music className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-white text-lg font-heading">Music & Guitar</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Playing acoustic and electric guitar, rhythm jam sessions, and exploring chord progressions.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-rose-500/40 transition-all">
-              <div className="p-3 rounded-xl bg-rose-500/10 text-rose-400 w-fit">
-                <Mic className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-white text-lg font-heading">Singing</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Vocal practice, acoustic covers, and melody experimentation during downtime.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-orange-500/40 transition-all">
-              <div className="p-3 rounded-xl bg-orange-500/10 text-orange-400 w-fit">
-                <Utensils className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-white text-lg font-heading">Cooking</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Culinary experimentation, trying out fusion recipes, and precision cooking.
-              </p>
-            </div>
-
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-cyan-500/40 transition-all">
               <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 w-fit">
-                <Cpu className="w-6 h-6" />
+                <Users className="w-6 h-6" />
               </div>
-              <h4 className="font-bold text-white text-lg font-heading">Tech Tinkering</h4>
+              <h4 className="font-bold text-white text-lg font-heading">Communication Skills</h4>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Evaluating new CLI utilities, AI agents, UI design libraries, and developer tools.
+                Clear verbal and written articulation, presentation ability, and effective cross-functional dialogue.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-emerald-500/40 transition-all">
+              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 w-fit">
+                <Award className="w-6 h-6" />
+              </div>
+              <h4 className="font-bold text-white text-lg font-heading">Teamwork & Leadership</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Active collaborator, team coordination, taking initiative during project deadlines, and peer support.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-violet-500/40 transition-all">
+              <div className="p-3 rounded-xl bg-violet-500/10 text-violet-400 w-fit">
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <h4 className="font-bold text-white text-lg font-heading">Presentation Skills</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Visual presentation and layout design, demonstrated by winning the Poster Making Competition.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-amber-500/40 transition-all">
+              <div className="p-3 rounded-xl bg-amber-500/10 text-amber-400 w-fit">
+                <Languages className="w-6 h-6" />
+              </div>
+              <h4 className="font-bold text-white text-lg font-heading">Languages</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Fluent in English and Hindi for professional, technical, and academic communication.
               </p>
             </div>
           </motion.div>
