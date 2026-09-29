@@ -4,11 +4,12 @@ import {
   ShieldCheck, 
   MapPin, 
   Mail, 
-  Phone,
+  Phone, 
   QrCode, 
-  Sparkles,
-  Cpu,
-  RotateCw
+  Cpu, 
+  RotateCw, 
+  Award, 
+  CheckCircle2 
 } from 'lucide-react';
 import { PROFILE_DATA } from '../../data/profile';
 
@@ -25,8 +26,8 @@ export const IdentityCard: React.FC = () => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rX = ((y - centerY) / centerY) * -12;
-    const rY = ((x - centerX) / centerX) * 12;
+    const rX = ((y - centerY) / centerY) * -10;
+    const rY = ((x - centerX) / centerX) * 10;
 
     setRotateX(rX);
     setRotateY(rY);
@@ -38,207 +39,206 @@ export const IdentityCard: React.FC = () => {
   };
 
   return (
-    <section id="identity" className="py-24 px-4 relative max-w-6xl mx-auto">
-      <div className="text-center space-y-3 mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-800/50 text-cyan-400 font-mono text-xs">
+    <section id="identity" className="py-20 px-4 relative max-w-5xl mx-auto">
+      <div className="text-center space-y-3 mb-14">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7ECE6] border border-[#E2B19A] text-[#A94E27] font-mono text-xs font-semibold">
           <ShieldCheck className="w-3.5 h-3.5" />
           <span>01 // DIGITAL IDENTITY</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
-          Developer ID & <span className="text-cyan-400">Credentials</span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[#231C18] font-heading tracking-tight">
+          Developer ID & <span className="text-[#C25E34]">Credentials</span>
         </h2>
-        <p className="text-slate-400 max-w-xl mx-auto text-sm">
-          Interactive identification badge representing Aditi Singh's verified academic & technical credentials.
+        <p className="text-[#6E5A4D] max-w-lg mx-auto text-sm">
+          Interactive identification badge verifying Aditi Singh's academic status, technical disciplines, and direct channels.
         </p>
       </div>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-        {/* Holographic 3D ID Badge Card */}
+        {/* Physical 3D Lanyard ID Badge */}
         <div className="perspective-1000 w-full max-w-md">
+          {/* Realistic Woven Lanyard Strap Hanging Above */}
+          <div className="flex flex-col items-center">
+            {/* Lanyard Fabric Ribbon */}
+            <div className="w-12 h-14 bg-gradient-to-b from-[#8C5A3C] via-[#A94E27] to-[#71381B] rounded-t-sm shadow-md flex items-center justify-center relative border-x border-[#5F3014]/40">
+              <div className="w-full h-full opacity-20 bg-[repeating-linear-gradient(45deg,#000,#000_2px,transparent_2px,transparent_4px)]" />
+              <div className="absolute inset-y-0 w-2 bg-black/15" />
+            </div>
+            {/* Brass Metallic Buckle Clip */}
+            <div className="w-14 h-5 bg-gradient-to-r from-[#CFC5A7] via-[#F0EAE0] to-[#B9A88C] rounded-md shadow-sm border border-[#A8987E] flex items-center justify-center relative -mt-1 z-20">
+              <div className="w-3 h-2 rounded-sm bg-[#5F5044] border border-[#382C25]" />
+            </div>
+          </div>
+
           <motion.div
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             animate={{ rotateX: rotateX, rotateY: rotateY }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            className="holo-card relative w-full rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-[#0b1329] border border-cyan-500/30 p-6 sm:p-8 shadow-2xl shadow-cyan-950/40 preserve-3d cursor-pointer"
+            transition={{ type: 'spring', stiffness: 280, damping: 22 }}
+            className="lanyard-card relative w-full rounded-2xl bg-[#FCFAF6] border border-[#D1C4AC] p-6 sm:p-7 preserve-3d cursor-pointer -mt-2"
             onClick={() => setIsFlipped(!isFlipped)}
           >
-            {/* Lanyard Top Slot */}
-            <div className="w-16 h-3 mx-auto rounded-full bg-slate-950 border border-slate-800 mb-6 flex items-center justify-center">
-              <div className="w-8 h-1 rounded-full bg-cyan-500/40" />
+            {/* Lanyard Slot Cutout in Badge */}
+            <div className="w-14 h-2.5 mx-auto rounded-full bg-[#E5DDCB] border border-[#C5BBA6] mb-5 flex items-center justify-center">
+              <div className="w-6 h-1 rounded-full bg-[#A8987E]" />
             </div>
 
-            {/* Header / Security Hologram */}
-            <div className="flex items-center justify-between border-b border-slate-800/80 pb-4 mb-6">
-              <div className="flex items-center gap-2">
-                <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
-                  <Cpu className="w-5 h-5" />
+            {/* Badge Header Strip */}
+            <div className="flex items-center justify-between border-b border-[#E5DDCB] pb-3 mb-5">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-xl bg-[#F7ECE6] border border-[#E2B19A] text-[#C25E34]">
+                  <Cpu className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono text-cyan-400 tracking-wider">ENGINEERING ARCHIVE</div>
-                  <div className="text-xs font-bold text-slate-200">IDENTIFICATION BADGE</div>
+                  <div className="text-[10px] font-mono text-[#A94E27] tracking-wider font-semibold">ENGINEERING ARCHIVE</div>
+                  <div className="text-xs font-bold text-[#231C18]">ACADEMIC CREDENTIAL</div>
                 </div>
               </div>
               <div className="text-right font-mono text-[11px]">
-                <div className="text-slate-500">BADGE ID</div>
-                <div className="text-cyan-300 font-bold">{PROFILE_DATA.badgeId}</div>
+                <div className="text-[#8C7464]">BADGE NO.</div>
+                <div className="text-[#231C18] font-bold">{PROFILE_DATA.badgeId}</div>
               </div>
             </div>
 
             {/* Front of Card Content */}
             {!isFlipped ? (
-              <div className="space-y-6">
-                {/* Avatar & Core Info */}
+              <div className="space-y-5">
+                {/* Avatar & Core Title */}
                 <div className="flex items-center gap-4">
                   <div className="relative">
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-cyan-500 via-teal-500 to-violet-600 p-0.5 shadow-lg shadow-cyan-500/20">
-                      <div className="w-full h-full rounded-[14px] bg-slate-950 flex items-center justify-center text-2xl font-extrabold text-cyan-300 font-mono">
+                    <div className="w-20 h-20 rounded-2xl bg-[#F0EAE0] border-2 border-[#D1C4AC] p-1 shadow-soft-sm">
+                      <div className="w-full h-full rounded-xl bg-[#231C18] flex items-center justify-center text-2xl font-extrabold text-[#F8F5EE] font-mono">
                         AS
                       </div>
                     </div>
-                    <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-slate-900 flex items-center justify-center">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#4E7A5E] border-2 border-[#FCFAF6] flex items-center justify-center shadow-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white font-heading tracking-tight">{PROFILE_DATA.name}</h3>
-                    <p className="text-xs text-cyan-400 font-mono font-medium mt-0.5">{PROFILE_DATA.role}</p>
-                    <p className="text-xs text-slate-400 mt-1 flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-cyan-400 shrink-0" />
-                      Thane (W), Mumbai
-                    </p>
-                  </div>
-                </div>
-
-                {/* Academic & Role Badges */}
-                <div className="space-y-2 font-mono text-xs">
-                  <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-300">
-                    <span className="text-slate-500">EDUCATION:</span>
-                    <span className="text-cyan-200 font-semibold truncate ml-2">Vidyalankar Inst. of Tech. (B.Tech)</span>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-300">
-                    <span className="text-slate-500">DIPLOMA CE:</span>
-                    <span className="text-emerald-300 font-semibold">V.P.M's Polytechnic — 91.40%</span>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-300">
-                    <span className="text-slate-500">SSC (CBSE):</span>
-                    <span className="text-violet-300 font-semibold">Lok Puram Public School — 90.40%</span>
-                  </div>
-                </div>
-
-                {/* Relevant Technologies Chips */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {["C", "C++", "Java", "Python", "HTML", "CSS", "JavaScript", "SQL", "MongoDB"].map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-md bg-cyan-950/50 border border-cyan-800/40 text-[11px] font-mono text-cyan-300">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Card Footer with QR Visual & Flip Prompt */}
-                <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="p-1.5 rounded bg-white text-slate-950">
-                      <QrCode className="w-6 h-6" />
-                    </div>
-                    <div className="text-[10px] font-mono text-slate-400">
-                      <div>VERIFIED PORTFOLIO</div>
-                      <div className="text-cyan-400">STATUS: AUTHORIZED</div>
+                    <h3 className="text-xl font-bold text-[#231C18] font-heading">{PROFILE_DATA.name}</h3>
+                    <p className="text-xs text-[#C25E34] font-medium">{PROFILE_DATA.role}</p>
+                    <p className="text-[11px] text-[#6E5A4D] mt-0.5">{PROFILE_DATA.institution}</p>
+                    <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#8C7464] mt-1">
+                      <MapPin className="w-3 h-3 text-[#A94E27]" />
+                      <span>{PROFILE_DATA.location}</span>
                     </div>
                   </div>
+                </div>
 
-                  <button className="flex items-center gap-1.5 text-[11px] font-mono text-violet-400 hover:text-violet-300 transition-colors">
-                    <RotateCw className="w-3.5 h-3.5" />
-                    <span>Flip for Details</span>
-                  </button>
+                {/* Academic & Professional Specs */}
+                <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                  <div className="p-2.5 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB]">
+                    <span className="text-[#8C7464] text-[10px] block">DEGREE PROGRAM</span>
+                    <span className="font-semibold text-[#231C18] text-[11px]">B.Tech in CE</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB]">
+                    <span className="text-[#8C7464] text-[10px] block">ACADEMIC STANDING</span>
+                    <span className="font-semibold text-[#231C18] text-[11px]">Diploma: {PROFILE_DATA.diplomaPercentage}%</span>
+                  </div>
+                </div>
+
+                {/* Verified Discipline Badges */}
+                <div className="space-y-1.5">
+                  <div className="text-[10px] font-mono text-[#8C7464] font-medium">CORE CAPABILITIES</div>
+                  <div className="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                    <span className="px-2 py-0.5 rounded-md bg-[#F2EDE2] border border-[#E3DAC7] text-[#5F5044]">C / C++</span>
+                    <span className="px-2 py-0.5 rounded-md bg-[#F2EDE2] border border-[#E3DAC7] text-[#5F5044]">Java / Python</span>
+                    <span className="px-2 py-0.5 rounded-md bg-[#F2EDE2] border border-[#E3DAC7] text-[#5F5044]">HTML / CSS / JS</span>
+                    <span className="px-2 py-0.5 rounded-md bg-[#F2EDE2] border border-[#E3DAC7] text-[#5F5044]">SQL / MongoDB</span>
+                  </div>
+                </div>
+
+                {/* Security Seal & Click to Flip Action */}
+                <div className="flex items-center justify-between pt-2 border-t border-[#E5DDCB] text-[11px] font-mono text-[#8C7464]">
+                  <div className="flex items-center gap-1.5 text-[#3D624A]">
+                    <Award className="w-3.5 h-3.5" />
+                    <span>VERIFIED RECORD</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[#A94E27] font-semibold hover:underline">
+                    <span>FLIP REVERSE</span>
+                    <RotateCw className="w-3 h-3" />
+                  </div>
                 </div>
               </div>
             ) : (
               /* Back of Card Content */
-              <div className="space-y-6 py-2">
-                <div className="text-xs font-mono text-cyan-400 border-b border-slate-800 pb-2 flex items-center justify-between">
-                  <span>CAREER OBJECTIVE & CONTACT</span>
-                  <span className="text-slate-500">[BACK SIDE]</span>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-[#E5DDCB] pb-2">
+                  <span className="text-xs font-mono font-bold text-[#231C18]">COMMUNICATION ACCESS</span>
+                  <span className="text-[10px] font-mono text-[#A94E27] bg-[#F7ECE6] px-2 py-0.5 rounded border border-[#E2B19A]">SECURE</span>
                 </div>
 
-                <div className="space-y-3 text-xs text-slate-300 leading-relaxed font-sans">
-                  <p className="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
-                    "{PROFILE_DATA.careerObjective}"
-                  </p>
+                {/* Contact Channels */}
+                <div className="space-y-2.5 text-xs font-mono">
+                  <div className="p-2.5 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-center justify-between">
+                    <span className="text-[#8C7464] flex items-center gap-2">
+                      <Mail className="w-3.5 h-3.5 text-[#C25E34]" /> Email:
+                    </span>
+                    <span className="text-[#231C18] font-bold text-[11px]">{PROFILE_DATA.socials.email}</span>
+                  </div>
 
-                  <div className="space-y-2 font-mono">
-                    <a 
-                      href={`mailto:${PROFILE_DATA.socials.email}`}
-                      className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition-all"
-                    >
-                      <span className="flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-cyan-400" />
-                        Email
-                      </span>
-                      <span className="text-slate-400">{PROFILE_DATA.socials.email}</span>
-                    </a>
+                  <div className="p-2.5 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-center justify-between">
+                    <span className="text-[#8C7464] flex items-center gap-2">
+                      <Phone className="w-3.5 h-3.5 text-[#C25E34]" /> Phone:
+                    </span>
+                    <span className="text-[#231C18] font-bold text-[11px]">{PROFILE_DATA.socials.phone}</span>
+                  </div>
 
-                    <a 
-                      href={`tel:${PROFILE_DATA.socials.phone}`}
-                      className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-300 transition-all"
-                    >
-                      <span className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-cyan-400" />
-                        Phone
-                      </span>
-                      <span className="text-slate-400">{PROFILE_DATA.socials.phone}</span>
-                    </a>
-
-                    <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs">
-                      <span className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-cyan-400" />
-                        Address
-                      </span>
-                      <span className="text-slate-400 text-right truncate ml-2">Thane (W)</span>
-                    </div>
+                  <div className="p-2.5 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-center justify-between">
+                    <span className="text-[#8C7464] flex items-center gap-2">
+                      <MapPin className="w-3.5 h-3.5 text-[#C25E34]" /> Location:
+                    </span>
+                    <span className="text-[#231C18] font-bold text-[11px]">{PROFILE_DATA.location}</span>
                   </div>
                 </div>
 
-                <button 
-                  onClick={() => setIsFlipped(false)}
-                  className="w-full py-2.5 rounded-xl bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 font-mono text-xs flex items-center justify-center gap-2 hover:bg-cyan-900/60 transition-all"
-                >
-                  <RotateCw className="w-3.5 h-3.5" />
-                  Flip Back
-                </button>
+                {/* Mock QR Verification Stamp */}
+                <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white rounded-lg border border-[#D1C4AC] flex items-center justify-center p-1">
+                    <QrCode className="w-10 h-10 text-[#231C18]" />
+                  </div>
+                  <div className="text-[11px] font-mono text-[#6E5A4D]">
+                    <div className="font-bold text-[#231C18]">SCAN VERIFICATION</div>
+                    <div className="text-[10px] text-[#8C7464]">Direct link to portfolio & credentials</div>
+                  </div>
+                </div>
+
+                {/* Flip Back Action */}
+                <div className="flex items-center justify-between pt-2 border-t border-[#E5DDCB] text-[11px] font-mono text-[#8C7464]">
+                  <span>OFFICIAL ARCHIVE</span>
+                  <div className="flex items-center gap-1 text-[#A94E27] font-semibold hover:underline">
+                    <span>FLIP FRONT</span>
+                    <RotateCw className="w-3 h-3" />
+                  </div>
+                </div>
               </div>
             )}
           </motion.div>
         </div>
 
-        {/* Identity Overview / Key Attributes Panel */}
-        <div className="w-full max-w-lg space-y-6">
-          <div className="p-6 rounded-2xl glass-card space-y-4">
-            <h3 className="text-lg font-bold text-white font-heading flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-cyan-400" />
-              Core Academic & Technical Profile
+        {/* Identity Details Card & Narrative Summary */}
+        <div className="w-full max-w-lg space-y-4">
+          <div className="parchment-card p-6 rounded-2xl space-y-4">
+            <h3 className="text-xl font-bold text-[#231C18] font-heading flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#C25E34]" />
+              Engineer Profile & Background
             </h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Aditi Singh is a motivated and detail-oriented Computer Engineering graduate with a strong foundation in software development, problem-solving, and teamwork.
+            <p className="text-sm text-[#483C33] leading-relaxed">
+              Aditi Singh is a Computer Engineering graduate from <strong>Vidyalankar Institute of Technology (VIT) Mumbai</strong>, with a background anchored in systematic problem-solving, clean code development, and modern web architectures.
+            </p>
+            <p className="text-sm text-[#483C33] leading-relaxed">
+              With hands-on experience in full-stack web applications and mobile engineering, Aditi blends analytical precision with practical product execution.
             </p>
 
-            <div className="grid grid-cols-2 gap-3 pt-2">
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-cyan-400">DEGREE</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">B.Tech in Computer Engg.</div>
+            <div className="pt-2 grid grid-cols-2 gap-3 text-xs font-mono">
+              <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB]">
+                <div className="text-[#8C7464] text-[10px]">CURRENT FOCUS</div>
+                <div className="text-[#231C18] font-bold mt-0.5">Software & Web Development</div>
               </div>
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-emerald-400">DIPLOMA SCORE</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">91.40% (V.P.M's Poly.)</div>
-              </div>
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-violet-400">SECONDARY (CBSE)</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">90.40% (Lok Puram)</div>
-              </div>
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="text-[11px] font-mono text-amber-400">INTERNSHIP</div>
-                <div className="text-xs font-semibold text-slate-200 mt-0.5">CareerRaiser (July 2024)</div>
+              <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB]">
+                <div className="text-[#8C7464] text-[10px]">VERIFIED HONORS</div>
+                <div className="text-[#C25E34] font-bold mt-0.5">Smart India Hackathon 1st Prize</div>
               </div>
             </div>
           </div>

@@ -13,20 +13,18 @@ export const ThreeBackground: React.FC = () => {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Particle nodes
-    const particleCount = Math.min(60, Math.floor(width / 25));
-    const particles: { x: number; y: number; vx: number; vy: number; radius: number; color: string }[] = [];
-
-    const colors = ['#06b6d4', '#8b5cf6', '#10b981', '#38bdf8'];
+    // Subtle warm ambient particles (dust motes / coordinate points)
+    const particleCount = Math.min(45, Math.floor(width / 35));
+    const particles: { x: number; y: number; vx: number; vy: number; radius: number; alpha: number }[] = [];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.8 + 0.8,
-        color: colors[Math.floor(Math.random() * colors.length)]
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        radius: Math.random() * 1.5 + 1.0,
+        alpha: Math.random() * 0.35 + 0.15
       });
     }
 
@@ -51,55 +49,50 @@ export const ThreeBackground: React.FC = () => {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw particle network connections
+      // Render subtle warm particles
       for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
 
-        // Move particles
         p1.x += p1.vx;
         p1.y += p1.vy;
 
-        // Bounce from boundaries
         if (p1.x < 0 || p1.x > width) p1.vx *= -1;
         if (p1.y < 0 || p1.y > height) p1.vy *= -1;
 
-        // Draw particle
+        // Draw soft warm terracotta/sepia point
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p1.color;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = p1.color;
+        ctx.fillStyle = `rgba(194, 94, 52, ${p1.alpha})`;
         ctx.fill();
 
-        // Connect nearby particles
+        // Connect nearby points with delicate warm hairline
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p1.x - p2.x;
           const dy = p1.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 130) {
+          if (dist < 110) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 130)})`;
-            ctx.lineWidth = 0.6;
-            ctx.shadowBlur = 0;
+            ctx.strokeStyle = `rgba(180, 150, 120, ${0.12 * (1 - dist / 110)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
 
-        // Connect with mouse cursor
+        // Soft interaction with cursor
         const mDx = p1.x - mouseX;
         const mDy = p1.y - mouseY;
         const mDist = Math.sqrt(mDx * mDx + mDy * mDy);
 
-        if (mDist < 160) {
+        if (mDist < 140) {
           ctx.beginPath();
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(mouseX, mouseY);
-          ctx.strokeStyle = `rgba(139, 92, 246, ${0.25 * (1 - mDist / 160)})`;
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = `rgba(194, 94, 52, ${0.15 * (1 - mDist / 140)})`;
+          ctx.lineWidth = 0.6;
           ctx.stroke();
         }
       }
@@ -119,7 +112,7 @@ export const ThreeBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-60"
+      className="fixed inset-0 pointer-events-none z-0 opacity-70"
     />
   );
 };

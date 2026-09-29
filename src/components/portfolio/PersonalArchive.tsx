@@ -2,37 +2,36 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Folder, 
-  Cpu, 
+  Compass, 
+  Code2, 
+  Languages, 
+  Users, 
+  CheckCircle2, 
   Sparkles,
-  Compass,
-  Code2,
-  Terminal,
-  Languages,
-  Users,
-  Award
+  BookOpen
 } from 'lucide-react';
-import { SpotlightCard } from '../ui/SpotlightCard';
+import { PROFILE_DATA } from '../../data/profile';
 
 export const PersonalArchive: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'profile' | 'focus' | 'competencies'>('profile');
 
   return (
-    <section id="about" className="py-24 px-4 relative max-w-6xl mx-auto">
-      <div className="text-center space-y-3 mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-950/40 border border-violet-800/50 text-violet-400 font-mono text-xs">
+    <section id="about" className="py-20 px-4 relative max-w-5xl mx-auto">
+      <div className="text-center space-y-3 mb-14">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7ECE6] border border-[#E2B19A] text-[#A94E27] font-mono text-xs font-semibold">
           <Folder className="w-3.5 h-3.5" />
           <span>02 // PERSONAL ARCHIVE</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
-          Background, Mindset & <span className="text-violet-400">Competencies</span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[#231C18] font-heading tracking-tight">
+          Background, Philosophy & <span className="text-[#C25E34]">Competencies</span>
         </h2>
-        <p className="text-slate-400 max-w-xl mx-auto text-sm">
-          Overview of software development foundation, problem-solving abilities, teamwork, and career objective.
+        <p className="text-[#6E5A4D] max-w-xl mx-auto text-sm">
+          A structured ledger of technical capabilities, problem-solving methodologies, and engineering direction.
         </p>
       </div>
 
       {/* Tab Navigation Dossier Folders */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      <div className="flex flex-wrap justify-center gap-2.5 mb-10">
         {[
           { id: 'profile', label: '01. Career Objective & Foundation', icon: Code2 },
           { id: 'focus', label: '02. Growth in Tech & Management', icon: Compass },
@@ -44,13 +43,13 @@ export const PersonalArchive: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-mono text-xs transition-all ${
+              className={`flex items-center gap-2.5 px-4.5 py-2.5 rounded-xl font-mono text-xs transition-all ${
                 isActive
-                  ? 'bg-violet-600/20 border border-violet-500/50 text-violet-300 shadow-lg shadow-violet-950/30'
-                  : 'bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-[#C25E34] text-white shadow-sm border border-[#A94E27]'
+                  : 'bg-[#FCFAF6] border border-[#E5DDCB] text-[#5F5044] hover:bg-[#F2EDE2]'
               }`}
             >
-              <Icon className={`w-4 h-4 ${isActive ? 'text-violet-400' : 'text-slate-500'}`} />
+              <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#C25E34]'}`} />
               <span>{tab.label}</span>
             </button>
           );
@@ -64,39 +63,44 @@ export const PersonalArchive: React.FC = () => {
             key="profile"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            <SpotlightCard className="p-6 space-y-4">
-              <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 w-fit">
-                <Terminal className="w-5 h-5" />
+            <div className="parchment-card p-6 rounded-2xl space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A94E27] font-semibold">
+                <Sparkles className="w-4 h-4" />
+                <span>MISSION STATEMENT</span>
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Software Development</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Strong engineering foundation in C, C++, Java, and Python alongside web technologies (HTML, CSS, basic JavaScript).
+              <h3 className="text-xl font-bold text-[#231C18] font-heading">
+                Building Reliable, High-Utility Software
+              </h3>
+              <p className="text-sm text-[#483C33] leading-relaxed">
+                Motivated and detail-oriented Computer Engineering student with a strong foundation in software development, problem-solving, and teamwork.
               </p>
-            </SpotlightCard>
+              <p className="text-sm text-[#483C33] leading-relaxed">
+                Eager to contribute technical skills and analytical mindset to innovative engineering projects while learning and growing in the organization.
+              </p>
+            </div>
 
-            <SpotlightCard className="p-6 space-y-4">
-              <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 w-fit">
-                <Cpu className="w-5 h-5" />
+            <div className="parchment-card p-6 rounded-2xl space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A94E27] font-semibold">
+                <CheckCircle2 className="w-4 h-4 text-[#3D624A]" />
+                <span>CORE ENGINEERING PILLARS</span>
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Problem Solving</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Structured, detail-oriented approach to resolving technical challenges, optimizing database queries with SQL and MongoDB, and developing practical solutions.
-              </p>
-            </SpotlightCard>
-
-            <SpotlightCard className="p-6 space-y-4">
-              <div className="p-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 w-fit">
-                <Sparkles className="w-5 h-5" />
+              <div className="space-y-3">
+                {[
+                  { title: 'Software Engineering', desc: 'Object-oriented programming in C++, Java, and Python with focus on modular, maintainable architectures.' },
+                  { title: 'Full-Stack Web Development', desc: 'Developing clean interfaces with HTML/CSS/JS and integrating responsive backends.' },
+                  { title: 'Data & Persistence', desc: 'Designing structured relational SQL schemas and scalable NoSQL collections with MongoDB.' },
+                ].map((pillar, idx) => (
+                  <div key={idx} className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB]">
+                    <div className="text-xs font-bold text-[#231C18] font-mono">{pillar.title}</div>
+                    <div className="text-xs text-[#6E5A4D] mt-0.5">{pillar.desc}</div>
+                  </div>
+                ))}
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">Teamwork & Collaboration</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Collaborative mindset demonstrated across academic group projects, the CareerRaiser web internship, and hackathon team achievements.
-              </p>
-            </SpotlightCard>
+            </div>
           </motion.div>
         )}
 
@@ -105,39 +109,53 @@ export const PersonalArchive: React.FC = () => {
             key="focus"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="p-8 rounded-3xl glass-card space-y-6 border border-violet-500/30"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
-              <div>
-                <span className="text-xs font-mono text-cyan-400">CAREER OBJECTIVE</span>
-                <h3 className="text-2xl font-bold text-white font-heading">Continuous Growth in Technology & Management</h3>
+            <div className="parchment-card p-6 rounded-2xl space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A94E27] font-semibold">
+                <Compass className="w-4 h-4" />
+                <span>CAREER ASPIRATION</span>
               </div>
-              <span className="px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800 text-cyan-300 font-mono text-xs">
-                Academic & Industry Ready
-              </span>
+              <h3 className="text-xl font-bold text-[#231C18] font-heading">
+                Technology & Management Synergy
+              </h3>
+              <p className="text-sm text-[#483C33] leading-relaxed">
+                Interested in growing in both technical software domains and management disciplines, combining hands-on technical competence with clear communication and team coordination.
+              </p>
+              <div className="p-3.5 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] text-xs font-mono text-[#5F5044]">
+                "Aiming to build technical solutions that create tangible real-world value while guiding cross-functional collaboration."
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
-              <div className="space-y-3">
-                <h4 className="font-semibold text-white flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400" />
-                  Academic Excellence & Practical Projects
-                </h4>
-                <p className="leading-relaxed text-slate-400">
-                  Secured 91.40% distinction in Diploma in Computer Engineering and 90.40% in CBSE Secondary Certificate. Built practical applications including Studio Vyakhya and Plant Caring App.
-                </p>
+            <div className="parchment-card p-6 rounded-2xl space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A94E27] font-semibold">
+                <BookOpen className="w-4 h-4" />
+                <span>KEY LEARNING HIGHLIGHTS</span>
               </div>
-
-              <div className="space-y-3">
-                <h4 className="font-semibold text-white flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                  Technology & Management Domains
-                </h4>
-                <p className="leading-relaxed text-slate-400">
-                  Eager to contribute technical expertise and communication capabilities in software development and management roles, continuously broadening industry knowledge.
-                </p>
+              <div className="space-y-2.5 text-xs">
+                <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-start gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-[#C25E34] mt-1.5" />
+                  <div>
+                    <strong className="text-[#231C18] block">Industry Web Development Experience</strong>
+                    <span className="text-[#6E5A4D]">CareerRaiser internship focused on real client web deliverables.</span>
+                  </div>
+                </div>
+                <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-start gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-[#C25E34] mt-1.5" />
+                  <div>
+                    <strong className="text-[#231C18] block">Hackathon Innovation Leadership</strong>
+                    <span className="text-[#6E5A4D]">Smart India Hackathon 1st Prize Winner for high-speed technical problem resolution.</span>
+                  </div>
+                </div>
+                <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-start gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-[#C25E34] mt-1.5" />
+                  <div>
+                    <strong className="text-[#231C18] block">Strong Academic Foundation</strong>
+                    <span className="text-[#6E5A4D]">91.40% in Diploma and 90.40% in SSC CBSE examinations.</span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -148,48 +166,51 @@ export const PersonalArchive: React.FC = () => {
             key="competencies"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-cyan-500/40 transition-all">
-              <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 w-fit">
-                <Users className="w-6 h-6" />
+            <div className="parchment-card p-6 rounded-2xl space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A94E27] font-semibold">
+                <Users className="w-4 h-4" />
+                <span>INTERPERSONAL & PROFESSIONAL STRENGTHS</span>
               </div>
-              <h4 className="font-bold text-white text-lg font-heading">Communication Skills</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Clear verbal and written articulation, presentation ability, and effective cross-functional dialogue.
-              </p>
+              <h3 className="text-xl font-bold text-[#231C18] font-heading">
+                Soft Skills & Teamwork
+              </h3>
+              <div className="space-y-3">
+                {PROFILE_DATA.softSkills.map((skill, idx) => (
+                  <div key={idx} className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-center justify-between">
+                    <span className="text-xs font-bold text-[#231C18]">{skill}</span>
+                    <span className="text-[10px] font-mono text-[#3D624A] bg-[#EAF2EC] px-2 py-0.5 rounded border border-[#C5DAC9]">
+                      VERIFIED
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-emerald-500/40 transition-all">
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 w-fit">
-                <Award className="w-6 h-6" />
+            <div className="parchment-card p-6 rounded-2xl space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A94E27] font-semibold">
+                <Languages className="w-4 h-4" />
+                <span>LANGUAGES & TELEMETRY</span>
               </div>
-              <h4 className="font-bold text-white text-lg font-heading">Teamwork & Leadership</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Active collaborator, team coordination, taking initiative during project deadlines, and peer support.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-violet-500/40 transition-all">
-              <div className="p-3 rounded-xl bg-violet-500/10 text-violet-400 w-fit">
-                <Sparkles className="w-6 h-6" />
+              <h3 className="text-xl font-bold text-[#231C18] font-heading">
+                Language Proficiency
+              </h3>
+              <div className="space-y-3">
+                {PROFILE_DATA.languages.map((lang, idx) => (
+                  <div key={idx} className="p-3.5 rounded-xl bg-[#F8F5EE] border border-[#E5DDCB] flex items-center justify-between">
+                    <div>
+                      <div className="text-sm font-bold text-[#231C18]">{lang}</div>
+                      <div className="text-xs text-[#6E5A4D]">Professional & Native Fluency</div>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-md bg-[#F2EDE2] border border-[#E3DAC7] text-xs font-mono text-[#5F5044]">
+                      VERIFIED
+                    </span>
+                  </div>
+                ))}
               </div>
-              <h4 className="font-bold text-white text-lg font-heading">Presentation Skills</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Visual presentation and layout design, demonstrated by winning the Poster Making Competition.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 hover:border-amber-500/40 transition-all">
-              <div className="p-3 rounded-xl bg-amber-500/10 text-amber-400 w-fit">
-                <Languages className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-white text-lg font-heading">Languages</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Fluent in English and Hindi for professional, technical, and academic communication.
-              </p>
             </div>
           </motion.div>
         )}

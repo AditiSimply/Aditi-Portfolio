@@ -4,62 +4,74 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        dark: {
-          bg: '#07090e',
-          surface: '#0d111a',
-          card: '#131926',
-          border: '#1e293b',
-          muted: '#334155',
+        parchment: {
+          50: '#FDFBF7',
+          100: '#F8F5EE',
+          200: '#EFE9DC',
+          300: '#E3DAC7',
+          400: '#D1C4AC',
+          500: '#B9A88C',
         },
-        brand: {
-          cyan: '#06b6d4',
-          emerald: '#10b981',
-          violet: '#8b5cf6',
-          amber: '#f59e0b',
-          rose: '#f43f5e',
-          gold: '#eab308',
+        espresso: {
+          950: '#18120F',
+          900: '#231C18',
+          800: '#342B24',
+          700: '#483C33',
+          600: '#5F5044',
+          500: '#7B6A5C',
+          400: '#9B897A',
+          300: '#BDAF9F',
+        },
+        terracotta: {
+          50: '#FBF5F2',
+          100: '#F7ECE6',
+          200: '#EFD4C7',
+          300: '#E2B19A',
+          400: '#D38A6A',
+          500: '#C25E34',
+          600: '#A94E27',
+          700: '#8A3D1C',
+        },
+        clay: {
+          500: '#8A5A36',
+          600: '#714828',
+        },
+        amberwarm: {
+          500: '#D97706',
+          600: '#B45309',
+        },
+        sage: {
+          50: '#F2F7F4',
+          100: '#E2EDE5',
+          500: '#4E7A5E',
+          600: '#3D624A',
+          700: '#2D4B37',
         }
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        heading: ['Outfit', 'Cabinet Grotesk', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-      },
-      animation: {
-        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'shimmer': 'shimmer 2.5s linear infinite',
-        'spin-slow': 'spin 12s linear infinite',
-        'orbit': 'orbit 20s linear infinite',
-      },
-      keyframes: {
-        pulseGlow: {
-          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', transform: 'scale(1.03)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
-        orbit: {
-          '0%': { transform: 'rotate(0deg) translateX(120px) rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg) translateX(120px) rotate(-360deg)' },
-        }
+        serif: ['DM Serif Display', 'Newsreader', 'serif'],
+        heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       boxShadow: {
-        'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.4)',
-        'glow-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.4)',
-        'glow-violet': '0 0 25px -5px rgba(139, 92, 246, 0.4)',
-        'glow-amber': '0 0 25px -5px rgba(245, 158, 11, 0.4)',
-        'glass-edge': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+        'soft-sm': '0 1px 3px rgba(45, 30, 20, 0.05), 0 1px 2px rgba(45, 30, 20, 0.04)',
+        'soft': '0 4px 16px -2px rgba(45, 30, 20, 0.06), 0 2px 6px -1px rgba(45, 30, 20, 0.04)',
+        'card': '0 10px 30px -4px rgba(45, 30, 20, 0.08), 0 4px 10px -2px rgba(45, 30, 20, 0.04)',
+        'card-hover': '0 20px 40px -6px rgba(45, 30, 20, 0.12), 0 8px 16px -4px rgba(45, 30, 20, 0.06)',
+        'terracotta': '0 8px 24px -4px rgba(194, 94, 52, 0.28)',
+      },
+      animation: {
+        'float-slow': 'float 7s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-6px)' },
+        }
       }
     },
   },
