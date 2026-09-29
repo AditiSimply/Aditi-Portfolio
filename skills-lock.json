@@ -350,10 +350,10 @@
       "computedHash": "94f256d43822eee4e489bc29944b6bd3f7d7e5e638cb135c3cfc06aa8449ef0f"
     },
     "brandkit": {
-      "source": "plugin87/ux-ui-agent-skills",
+      "source": "Leonxlnx/taste-skill",
       "sourceType": "github",
-      "skillPath": ".claude/skills/brandkit/SKILL.md",
-      "computedHash": "9ef0f6223c136bc1523242a453da8c448f7ef8776e6b876b0399e425f34f129b"
+      "skillPath": "skills/brandkit/SKILL.md",
+      "computedHash": "735007879f5110aeae1e981a53fe74a12afde70347f9773dacd50e4697a091bf"
     },
     "bright-green-tech-system-webgl": {
       "source": "MengTo/Skills",
@@ -1208,10 +1208,10 @@
       "computedHash": "47b9e00b3a7d1dc0c2f589ebb858db59c9c35a2a0d0d31878437136dd2f21b88"
     },
     "image-to-code": {
-      "source": "plugin87/ux-ui-agent-skills",
+      "source": "Leonxlnx/taste-skill",
       "sourceType": "github",
-      "skillPath": ".claude/skills/image-to-code/SKILL.md",
-      "computedHash": "8c723c2150c30a40b6f24119a8aac4384c40d10ef7d02f51c178d49f61877940"
+      "skillPath": "skills/image-to-code-skill/SKILL.md",
+      "computedHash": "3d2ac14d956fdafc5500d2108b90895e134d847f9f199e7f1d18bf1f814cf7c8"
     },
     "imagegen-frontend-mobile": {
       "source": "Leonxlnx/taste-skill",
