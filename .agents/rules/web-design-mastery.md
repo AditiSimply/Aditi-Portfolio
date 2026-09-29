@@ -1,57 +1,61 @@
-# Web Development & Design Mastery Standard
+# Web Development, Design Mastery & Anti-AI-Slop Standard
 
-Whenever creating, modifying, redesigning, or architecting ANY website or web application, Antigravity MUST apply this design doctrine and activate the relevant specialized design skills from the 429 installed skills (`designskills.dev`).
-
----
-
-## 1. Core Visual Taste & Anti-Slop Principles
-- **No Generic AI Slop**: Never produce cookie-cutter, templated, or sterile interfaces (e.g. generic white cards with default drop shadows, centered purple gradient pill buttons, or boring 3-column feature grids).
-- **Intentional Aesthetic Direction**: For every website, intentionally select and commit to an aesthetic style from the installed skills library:
-  - *High-End Agency Craft* (`high-end-visual-design`, `taste-and-craft`)
-  - *Dark Glass & Laser* (`dark-glass-clean-layout`, `blue-laser-clean-glass-layout`, `webgl-laser`)
-  - *Editorial & Parchment* (`claude`, `book-serif-index`, `terracotta`, `editorial-tech`)
-  - *Minimalist Density* (`codex`, `minimalist-ui`, `minimal`, `clean`)
-  - *Tactile & Skeuomorphic* (`high-contrast-skeuomorphic-clean`, `skeuomorphic-ui`, `claymorphism`)
-  - *Retro / Cyber* (`retro-ui`, `sega`, `matrix`, `dither-laser-dark-mode`)
-  - *Brand Mirroring* (`SpaceZephyr/brand-design-md` for Apple, Stripe, Notion, Linear, Claude, Vercel)
-- **Micro-Borders & Deliberate Lighting**: Use fine border treatments (`border-white/10`, `border-black/5`, or gradient border masks) instead of heavy solid borders or muddy drop shadows. Use restrained radial lighting or soft ambient halos.
+Whenever creating, modifying, redesigning, or architecting ANY website or web application, Antigravity MUST adhere to this design doctrine and activate the relevant specialized design skills from the 429+ installed skills (`designskills.dev`, `nutlope/hallmark`, `Leonxlnx/taste-skill`).
 
 ---
 
-## 2. Typography & Layout Hierarchy
-- **Modern Curated Typography**: Never use browser default fonts or uninspired generic type. Always import premium fonts from Google Fonts:
-  - *Tech / High-Density*: Inter, JetBrains Mono, Space Grotesk, Plus Jakarta Sans
-  - *Editorial / Warmth*: Newsreader, Playfair Display, Cinzel, Instrument Serif
-  - *Futuristic / Geometric*: Outfit, Syne, Clash Display, Cabinet Grotesk
-- **Fluid Structural Framing**:
-  - Implement modular **Bento Grids** (`bento`) with asymmetrical card spans.
-  - Use **Framed Grid Layouts** (`framed-grid-layout`) with thin guide lines and corner bracket markers (`+` or `L`).
-  - Use nested container shells (`nested-container-clean-agency`) for depth and rhythm.
+## 1. Hallmark Anti-AI-Slop & Design Disciplines (`nutlope/hallmark`)
+Hallmark enforces structural and visual variety, ensuring UIs look intentionally crafted rather than AI-generated:
+- **Pre-Emit Self-Critique**: Score every UI against 6 weighted axes (Philosophy, Hierarchy, Execution, Specificity, Restraint, Variety). Any score < 3 triggers an immediate revision pass.
+- **Honest Content & Zero Fabricated Metrics**: NEVER invent fake conversion rates (*"+47% conversion"*), imaginary user counts (*"trusted by 50,000+ teams"*), or fabricated client testimonials. Use real project data, a neutral dash `—`, or change the macrostructure to not rely on fake stats.
+- **Locked Tokens (No Mid-Render Improvisation)**: Every color and font must reference a defined design token (`var(--color-accent)`, `var(--font-display)`). Inline hardcoded hex/OKLCH improvisation is prohibited.
+- **Forbidden Re-drawn Fake Chrome**: Never draw mock browser address bars with traffic-light dots or fake phone/IDE borders. Let real content breathe inside clean `<figure>` framing with hairline borders.
+- **Typography Purity (No Italic Headers)**: Headings and display titles must ALWAYS remain upright roman (`font-style: normal`). Italic words inside display titles are a telltale AI slop artifact. Reserve italics strictly for running body copy emphasis.
+- **Mandatory 8-State Interactive Components**: Every interactive button, input, or control must implement distinct visual styling for all 8 states:
+  1. Default
+  2. `:hover`
+  3. `:focus-visible`
+  4. `:active`
+  5. Disabled
+  6. Loading (`data-state="loading"`)
+  7. Error (`data-state="error"`)
+  8. Success (`data-state="success"`)
+- **Non-Negotiable Mobile Responsiveness**: Verified across `320px`, `375px`, `414px`, and `768px`. Set `overflow-x: clip` on `html` and `body` (never `hidden`), no two-line button text, and use `minmax(0, 1fr)` for image grid tracks.
+- **Hallmark Verbs**:
+  - `hallmark audit <target>`: Score target UI against anti-pattern checks and emit ranked punch list without modifying code.
+  - `hallmark redesign <target>`: Surgically redesign the visual/interaction layer while strictly preserving existing business logic, routing, and data.
+  - `hallmark study <screenshot | URL>`: Extract design DNA (macrostructure, typography pairing, color anchor) from reference material without pixel-copying.
 
 ---
 
-## 3. Motion, Physics & Micro-Interactions
-- **Smooth, Intentional Motion**: Every interactive element must feel alive, responsive, and tactile.
-- **Scroll Storytelling**: Use GSAP ScrollTrigger (`gsap-scrolltrigger-storytelling`) or Lenis smooth scroll for pinned section transitions, masked word reveals, and progressive storytelling.
-- **Micro-Animations**:
-  - Magnetic hover pull on primary CTA buttons.
-  - Interactive 3D tilt cards on cursor movement.
-  - Fluid spring tabs and micro-switches.
-  - Live pulse indicators on status badges.
-- **Physics & 3D WebGL**:
-  - Incorporate Three.js scenes, interactive WebGL lasers, particle fields, 3D ID lanyards (`3d-lanyard-id-card`), or interactive globes (`cobejs`, `globe-gl`) whenever visual impact is needed.
+## 2. Taste-Skill Suite Standards (`Leonxlnx/taste-skill`)
+- **High-End Agency Craft (`high-end-visual-design`)**: Use restrained micro-borders (`border-white/10`, `border-black/5`), soft ambient halos, and deep neutral anchors (`#09090b`, `#0a0a0a`) instead of muddy drop shadows.
+- **Full Output Enforcement (`full-output-enforcement`)**: Never truncate code with `// ... rest of code goes here`. Deliver complete, drop-in production files.
+- **Surgical Redesign (`redesign-existing-projects`)**: When upgrading a project, audit the existing code, preserve user data structures, and elevate aesthetics without breaking functionality.
+- **Brand Tokens & Assets (`brandkit`, `image-to-code`)**: Mirror brand identity with precision tokens and extract layout architecture from visual references.
 
 ---
 
-## 4. Color Calibration & Contrast
-- Never use raw primary colors (pure red `#ff0000`, pure green `#00ff00`, pure blue `#0000ff`).
-- Use curated HSL or OKLCH harmonious palettes with deep neutral anchors (`#09090b`, `#0f172a`, `#18181b` for dark modes; `#fbf9f5`, `#f8fafc` for warm light modes).
-- Ensure all text and interactive elements satisfy **WCAG 2.2 AA** contrast ratios (minimum 4.5:1 for body copy, 3:1 for large display text and UI controls).
+## 3. Structural Variety & Macrostructures
+Never fall into the standard AI rhythm (Hero → 3-Card Grid → CTA → Footer). Rotate intentionally across named macrostructures:
+- **Bento Grid**: Asymmetric, modular information hierarchy with varied card spans.
+- **Workbench / Split Studio**: Technical dual-pane layout, telemetry feeds, and interactive workspaces.
+- **Editorial / Long Document**: Serif-led reading cadence, hanging marginalia, pull quotes, and chapter dividers.
+- **Marquee Hero & Stat-Led**: Kinetic typography headers, real verified data strips, and edge-clipped media.
+- **Framed Grid (`framed-grid-layout`)**: Thin guide lines, corner `+`/`L` brackets, and technical alignment.
 
 ---
 
-## 5. Engineering Standards & Zero-Placeholders
-- **No Placeholders**: Never use "Lorem ipsum", "John Doe", or generic dummy data. Generate realistic, domain-specific copy and generate working graphics or icons via SVG / Lucide / AI images.
-- **Responsive by Design**: Test and verify flawlessly across Mobile (375px+), Tablet (768px+), Laptop (1024px+), and Desktop (1440px+).
-- **Accessible & Semantic**: Single `<h1>` per page, semantic landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`), keyboard accessible focus rings, and proper ARIA attributes.
-- **Production Validation**: Always test build correctness (`npm run build`), verify zero console errors, and ensure fluid performance (60fps, low layout shift).
+## 4. Typography & Color Precision
+- **Curated Google Font Pairings**:
+  - *Tech / Density*: Plus Jakarta Sans + JetBrains Mono, Inter + Space Grotesk
+  - *Editorial / Warmth*: Newsreader + Inter, Playfair Display + Outfit, Instrument Serif + Plus Jakarta Sans
+  - *Futuristic*: Syne + Space Mono, Clash Display + Cabinet Grotesk
+- **Harmonious Palettes**: Always use calibrated HSL / OKLCH color systems. Ban raw primary `#ff0000` / `#0000ff`. Ensure all text meets **WCAG 2.2 AA** contrast ratios (minimum 4.5:1 for body copy).
+
+---
+
+## 5. Motion, Physics & Micro-Interactions
+- **Kinetic Feedback**: Magnetic cursor hover on primary buttons, 3D card tilt with mouse tracking, and fluid spring tabs.
+- **Scroll Storytelling**: GSAP ScrollTrigger for pinned section reveals and word-by-word mask reveals.
+- **3D & Canvas**: Three.js ambient environments, 3D Lanyard ID badges (`3d-lanyard-id-card`), WebGL lasers (`webgl-laser`), and interactive particle fields.
