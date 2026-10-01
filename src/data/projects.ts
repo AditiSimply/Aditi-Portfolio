@@ -84,5 +84,37 @@ export const PROJECTS: ProjectCaseStudy[] = [
       "Designed clean, human-centered mobile user interfaces"
     ],
     status: "Completed"
+  },
+  {
+    id: "aditi-portfolio",
+    title: "Aditi Portfolio",
+    subtitle: "AI-Powered Systems & Modern Web Showcase Platform",
+    category: "Full-Stack Web",
+    metaphor: "book",
+    spineColor: "#b45309", // Warm Amber
+    coverGradient: "from-amber-950 via-zinc-900 to-yellow-950",
+    accentColor: "#f59e0b",
+    year: "2024",
+    summary: "Created a high-performance personal portfolio featuring 3D book showcases, interactive terminal simulators, and custom WebGL design components.",
+    problem: "Traditional portfolio websites lack depth, interaction, and architectural personality necessary to showcase full-stack and modern web craft.",
+    idea: "Architected a showcase platform blending ThreeUI 3D volumes, interactive terminal agents, and responsive CSS design systems.",
+    role: "Lead Systems Architect & Frontend Engineer",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js / WebGL"],
+    keyFeatures: [
+      "ThreeUI 3D Interactive Bestsellers Book Showcase",
+      "Interactive Matrix Terminal & Live Command Execution",
+      "Dynamic Background Mist & Vanishing Transitions",
+      "Full Case Study Dossier Modal System",
+      "WCAG 2.2 AA High-Contrast Accessibility Design"
+    ],
+    challenges: [
+      "Optimizing 3D transform performance and mouse parallax math across desktop & mobile",
+      "Integrating rich ambient media assets while maintaining instant page loads"
+    ],
+    learnings: [
+      "Mastered 3D spatial UI physics and Framer Motion spring interactions",
+      "Pioneered anti-slop high-grade visual design standards"
+    ],
+    status: "Completed"
   }
 ];

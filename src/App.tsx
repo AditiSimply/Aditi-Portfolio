@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navigation } from './components/ui/Navigation';
-import { ThreeBackground } from './components/three/ThreeBackground';
 import { HeroSection } from './components/portfolio/HeroSection';
-import { IdentityCard } from './components/portfolio/IdentityCard';
 import { PersonalArchive } from './components/portfolio/PersonalArchive';
 import { BookshelfProjects } from './components/portfolio/BookshelfProjects';
 import { SkillLaboratory } from './components/portfolio/SkillLaboratory';
@@ -19,69 +17,63 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#F8F5EE] text-[#231C18] selection:bg-[#C25E34]/20 selection:text-[#794D2C]">
-      {/* Background Ambient Warm Particle Canvas */}
-      <ThreeBackground />
-
-      {/* Architectural Fine Guide Grid */}
-      <div className="fixed inset-0 architect-guide pointer-events-none opacity-60 z-0" />
-
-      {/* Floating Navigation */}
+    <div className="relative min-h-screen bg-[#FAF7F2] text-[#1E293B] selection:bg-[#C25E34]/20 selection:text-[#0F172A] overflow-x-clip">
+      {/* Floating Modern Header Navigation matching reference */}
       <Navigation />
 
-      {/* Main Content Flow */}
-      <main className="relative z-10 flex flex-col space-y-6">
-        {/* 01. Hero Section */}
+      {/* Main Content Flow: Each Section is a Distinct Editorial Chapter */}
+      <main className="relative z-10 flex flex-col">
+        {/* Chapter 01: Hero Section (Split Editorial Workspace Scene) */}
         <HeroSection />
 
-        {/* 02. Identity Holographic Lanyard Card */}
-        <IdentityCard />
-
-        {/* 03. Personal Archive & Mindset */}
+        {/* Chapter 02: About Me (Identity Spread with Tilted Polaroid & Tactile Notepad) */}
         <PersonalArchive />
 
-        {/* 04. 3D Project Bookshelf & Case Studies */}
+        {/* Chapter 03: Project Archive (Physical Bookshelf Library) */}
         <BookshelfProjects />
 
-        {/* 05. Skill Laboratory & Technology Map */}
+        {/* Chapter 04: Skill Laboratory (Illuminated Marble Podium with 3D Glossy Badges) */}
         <SkillLaboratory />
 
-        {/* 06. Experience Timeline */}
+        {/* Chapter 05: Experience (Editorial Internship Timeline on Agency Studio Desk) */}
         <ExperienceTimeline />
 
-        {/* 07. Education & Academic Records */}
+        {/* Chapter 06: Academic Records (Interconnected Campus Landscape Journey) */}
         <EducationArchive />
 
-        {/* 08. Achievement Cabinet */}
+        {/* Chapter 07: Honors & Recognition (Museum Spotlight Award Pedestals) */}
         <AchievementCabinet />
 
-        {/* 09. Code Activity & Language Telemetry */}
+        {/* Chapter 08: Code Telemetry & Activity Rhythm */}
         <GitHubActivityPanel />
 
-        {/* 10. Direct Contact Channel */}
+        {/* Chapter 09: Correspondence Desk (Stationery Letter & Direct Channels) */}
         <ContactChannel />
       </main>
 
-      {/* Footer */}
-      <footer className="relative z-10 border-t border-[#E5DDCB] bg-[#FCFAF6]/90 backdrop-blur-md py-12 px-4 mt-20">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs font-mono text-[#6E5A4D]">
+      {/* Editorial Footer */}
+      <footer className="relative z-10 border-t border-[#E5DDCB] bg-[#FCFAF6] py-12 px-4 sm:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs font-sans text-[#6E5A4D]">
+          
           <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#4E7A5E]" />
-            <span className="font-bold text-[#231C18]">
-              ADITI SINGH <span className="text-[#A94E27]">//</span> PORTFOLIO ARCHIVE
+            <span className="w-2.5 h-2.5 rounded-full bg-[#3D624A]" />
+            <span className="font-heading font-bold text-sm tracking-wider text-[#0F172A]">
+              ADITI SINGH <span className="text-[#C25E34]">//</span> PORTFOLIO
             </span>
           </div>
 
           <div className="text-center sm:text-right space-y-1">
-            <p className="font-medium text-[#483C33]">Designed & Engineered for High-Craft Digital Storytelling</p>
-            <p className="text-[11px] text-[#8C7464]">
-              Vidyalankar Institute of Technology, Mumbai • All Credentials Verified
+            <p className="font-medium text-[#334155]">
+              Computer Engineering Graduate • Vidyalankar Institute of Technology, Mumbai
+            </p>
+            <p className="text-[11px] text-[#8C7464] font-mono">
+              Designed & Engineered with Editorial Craft • Zero Fabricated Data
             </p>
           </div>
 
           <button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-[#F8F5EE] border border-[#D1C4AC] text-[#483C33] hover:text-[#C25E34] hover:bg-[#FFFFFF] transition-all shadow-soft-sm"
+            className="p-3 rounded-full bg-[#FFFDF9] border border-[#D1C4AC] text-[#334155] hover:text-[#C25E34] hover:bg-white transition-all shadow-sm hover:shadow"
             aria-label="Scroll back to top"
           >
             <ArrowUp className="w-4 h-4" />

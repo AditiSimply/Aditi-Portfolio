@@ -20,6 +20,8 @@ export interface ProfileData {
   socials: {
     email: string;
     phone: string;
+    github: string;
+    linkedin: string;
   };
   metrics: {
     projectsCount: number;
@@ -63,7 +65,9 @@ export const PROFILE_DATA: ProfileData = {
   ],
   socials: {
     email: "aditi60911@gmail.com",
-    phone: "+91 704509771116"
+    phone: "+91 704509771116",
+    github: "https://github.com/aditi60911",
+    linkedin: "https://www.linkedin.com/in/aditi-singh-46327b31b"
   },
   metrics: {
     projectsCount: 2,

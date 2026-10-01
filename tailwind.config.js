@@ -49,6 +49,13 @@ export default {
           500: '#4E7A5E',
           600: '#3D624A',
           700: '#2D4B37',
+        },
+        navy: {
+          50: '#F0F4F9',
+          100: '#E1E9F2',
+          800: '#1E293B',
+          900: '#0F172A',
+          950: '#090E17',
         }
       },
       fontFamily: {
@@ -56,6 +63,7 @@ export default {
         serif: ['DM Serif Display', 'Newsreader', 'serif'],
         heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        handwriting: ['Caveat', 'cursive'],
       },
       boxShadow: {
         'soft-sm': '0 1px 3px rgba(45, 30, 20, 0.05), 0 1px 2px rgba(45, 30, 20, 0.04)',

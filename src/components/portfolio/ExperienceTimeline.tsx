@@ -1,101 +1,122 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
-import { TIMELINE_EVENTS } from '../../data/experience';
+import PaperCrumple from '../ui/PaperCrumple';
+import { ScrollFloat } from '../ui/ScrollFloat';
+
+// High-resolution crisp SVG generator for CareerRaiser Internship Sheet
+const createInternshipSvg = () => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="700" height="900" viewBox="0 0 700 900" shape-rendering="crispEdges" text-rendering="geometricPrecision">
+    <rect width="700" height="900" rx="28" fill="#FFFDF9" stroke="#C3A47B" stroke-width="8"/>
+    <rect x="24" y="24" width="652" height="852" rx="20" fill="none" stroke="#D1C4AC" stroke-width="2.5" stroke-dasharray="10 7"/>
+    
+    <!-- Top Watermark / Header -->
+    <text x="56" y="86" font-family="ui-monospace, monospace" font-size="17" font-weight="800" fill="#C25E34">📅 JULY 2024 — PRESENT</text>
+    <rect x="500" y="58" width="144" height="40" rx="20" fill="#E2EDE5" stroke="#3D624A" stroke-width="2.5"/>
+    <text x="572" y="83" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#3D624A" text-anchor="middle">INTERNSHIP</text>
+    
+    <!-- Role Title -->
+    <text x="56" y="152" font-family="Georgia, serif" font-size="40" font-weight="bold" fill="#0F172A">Web &amp; Design Intern</text>
+    <text x="56" y="196" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#C25E34">@ CareerRaiser <tspan fill="#6E5A4D" font-weight="600">• Thane / Remote</tspan></text>
+    
+    <line x1="56" y1="230" x2="644" y2="230" stroke="#E5DDCB" stroke-width="3"/>
+    
+    <!-- Bullet Points -->
+    <g transform="translate(0, 20)">
+      <circle cx="70" cy="270" r="7" fill="#C25E34"/>
+      <text x="96" y="276" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">Designed and created digital posters for events</text>
+      <text x="96" y="306" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">and marketing campaigns.</text>
+      
+      <circle cx="70" cy="370" r="7" fill="#C25E34"/>
+      <text x="96" y="376" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">Built and customized websites using Divi</text>
+      <text x="96" y="406" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">(WordPress page builder).</text>
+      
+      <circle cx="70" cy="470" r="7" fill="#C25E34"/>
+      <text x="96" y="476" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">Learned UI/UX design principles, website</text>
+      <text x="96" y="506" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">layouts, and visual presentation.</text>
+      
+      <circle cx="70" cy="570" r="7" fill="#C25E34"/>
+      <text x="96" y="576" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">Collaborated with team members, improving</text>
+      <text x="96" y="606" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="600" fill="#0F172A">creativity, communication &amp; teamwork skills.</text>
+    </g>
+    
+    <line x1="56" y1="675" x2="644" y2="675" stroke="#E5DDCB" stroke-width="3"/>
+    
+    <!-- Skills Chips -->
+    <g transform="translate(56, 705)">
+      <rect x="0" y="0" width="170" height="42" rx="12" fill="#FAF7F2" stroke="#C3A47B" stroke-width="2"/>
+      <text x="85" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#0F172A" text-anchor="middle">Divi (WordPress)</text>
+      
+      <rect x="186" y="0" width="150" height="42" rx="12" fill="#FAF7F2" stroke="#C3A47B" stroke-width="2"/>
+      <text x="261" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#0F172A" text-anchor="middle">UI/UX Design</text>
+      
+      <rect x="352" y="0" width="200" height="42" rx="12" fill="#FAF7F2" stroke="#C3A47B" stroke-width="2"/>
+      <text x="452" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#0F172A" text-anchor="middle">Digital Poster Design</text>
+    </g>
+
+    <!-- Bottom Action Prompt -->
+    <text x="350" y="820" font-family="ui-monospace, monospace" font-size="15" font-weight="800" fill="#C25E34" text-anchor="middle">✋ CLICK / HOLD / DRAG TO CRUMPLE THIS SHEET</text>
+  </svg>`;
+  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+};
 
 export const ExperienceTimeline: React.FC = () => {
   return (
-    <section id="experience" className="py-20 px-4 relative max-w-5xl mx-auto">
-      <div className="text-center space-y-3 mb-14">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7ECE6] border border-[#E2B19A] text-[#A94E27] font-mono text-xs font-semibold">
-          <Briefcase className="w-3.5 h-3.5" />
-          <span>05 // PROFESSIONAL CHRONOLOGY</span>
-        </div>
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-[#231C18] font-heading tracking-tight">
-          Experience & <span className="text-[#C25E34]">Milestones</span>
-        </h2>
-        <p className="text-[#6E5A4D] max-w-xl mx-auto text-sm">
-          Chronological record of internships, project deployments, hackathons, and engineering achievements.
-        </p>
-      </div>
+    <section 
+      id="experience" 
+      className="relative py-32 px-4 sm:px-8 lg:px-12 overflow-hidden bg-cover bg-center"
+      style={{
+        backgroundImage: 'url(/bg/5.png)',
+      }}
+    >
+      {/* Top & Bottom Vanishing Transitions */}
+      <div className="absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-[#FAF7F2] via-[#FAF7F2]/50 to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/50 to-transparent pointer-events-none z-10" />
 
-      {/* Vertical Timeline Container */}
-      <div className="relative border-l-2 border-[#E5DDCB] ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-10">
-        {TIMELINE_EVENTS.map((event, index) => (
-          <motion.div
-            key={event.id}
-            initial={{ opacity: 0, x: -15 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: index * 0.1 }}
-            className="relative group"
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center space-y-3 mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-white/60 text-xs font-mono font-bold text-[#0F172A] shadow-sm backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-[#C25E34]" />
+            <span>05. EXPERIENCE</span>
+          </div>
+
+          <ScrollFloat
+            containerClassName="text-3xl sm:text-5xl font-serif font-bold text-[#0F172A] tracking-tight drop-shadow-sm"
+            animationDuration={0.8}
+            ease="back.inOut(2)"
+            stagger={0.025}
           >
-            {/* Node Icon Circle */}
-            <div 
-              className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#FCFAF6] border-2 border-[#C25E34] flex items-center justify-center shadow-soft-sm"
-            >
-              <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C25E34]" />
-            </div>
+            Internship Experience
+          </ScrollFloat>
 
-            {/* Timeline Card */}
-            <div className="parchment-card p-6 sm:p-7 rounded-2xl space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E5DDCB] pb-3">
-                <span className="px-3 py-1 rounded-full bg-[#F8F5EE] border border-[#E5DDCB] font-mono text-xs text-[#5F5044] flex items-center gap-1.5 font-medium">
-                  <Calendar className="w-3.5 h-3.5 text-[#C25E34]" />
-                  {event.period}
-                </span>
+          <p className="text-sm sm:text-base text-[#0F172A] font-medium max-w-xl mx-auto font-sans leading-relaxed bg-white/60 p-2.5 rounded-xl backdrop-blur-md border border-white/40 shadow-xs">
+            Professional learning and real-world exposure. Interactive 3D paper crumple — hold or drag to crumple and unfold the document.
+          </p>
+        </div>
 
-                <span className="px-3 py-1 rounded-full font-mono text-xs font-bold bg-[#F7ECE6] text-[#A94E27] border border-[#E2B19A]">
-                  {event.type.toUpperCase()}
-                </span>
-              </div>
+        {/* Crisp Large PaperCrumple Document (Clean, No blurry background card) */}
+        <div className="w-full flex justify-center items-center py-4">
+          <PaperCrumple
+            src={createInternshipSvg()}
+            alt="CareerRaiser Web & Design Intern Dossier"
+            width={520}
+            height={660}
+            sceneHeight={740}
+            releaseBehavior="restore"
+            crumpleAmount={0.85}
+            crumpleDuration={0.55}
+            releaseDuration={0.4}
+            foldCount={6}
+            foldSharpness={0.6}
+            wrinkleDepth={0.65}
+            creaseStrength={0.18}
+            paperColor="#faf7f2"
+            paperTexture={0.08}
+            draggable
+            returnToOrigin
+          />
+        </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-[#231C18] font-heading group-hover:text-[#C25E34] transition-colors">
-                  {event.role}
-                </h3>
-                <div className="flex flex-wrap items-center gap-2 mt-1 text-sm font-medium text-[#483C33]">
-                  <span>{event.organization}</span>
-                  <span className="text-[#D1C4AC]">•</span>
-                  <span className="flex items-center gap-1 text-xs text-[#8C7464] font-mono">
-                    <MapPin className="w-3 h-3 text-[#A94E27]" />
-                    {event.location}
-                  </span>
-                </div>
-              </div>
-
-              <p className="text-sm text-[#483C33] leading-relaxed">
-                {event.description}
-              </p>
-
-              {/* Achievements Checklist */}
-              {event.achievements && event.achievements.length > 0 && (
-                <div className="space-y-2 pt-2 border-t border-[#E5DDCB]">
-                  {event.achievements.map((ach, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs text-[#483C33]">
-                      <CheckCircle2 className="w-4 h-4 text-[#4E7A5E] shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{ach}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Technologies Applied */}
-              {event.technologies && (
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {event.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 rounded-md bg-[#F2EDE2] border border-[#E3DAC7] text-[11px] font-mono text-[#5F5044]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </motion.div>
-        ))}
       </div>
     </section>
   );
