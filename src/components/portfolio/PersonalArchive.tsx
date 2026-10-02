@@ -203,7 +203,7 @@ export const PersonalArchive: React.FC = () => {
                   <div className="flex-1 flex flex-col justify-center items-center py-2 space-y-2">
                     <div className="w-full h-[220px] rounded-xl overflow-hidden bg-stone-100 border border-[#E5DDCB] shadow-inner shrink-0">
                       <img
-                        src="/assets/editorial/about_polaroid_hd.jpg"
+                        src={`${import.meta.env.BASE_URL}assets/editorial/about_polaroid_hd.jpg`}
                         alt="Aditi Singh student developer"
                         className="w-full h-full object-cover object-top"
                       />
