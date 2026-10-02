@@ -119,7 +119,7 @@ export const BookshelfProjects: React.FC = () => {
       id="projects" 
       className="relative py-28 px-4 sm:px-8 lg:px-12 overflow-hidden bg-cover bg-center text-white min-h-screen flex flex-col justify-center"
       style={{
-        backgroundImage: 'url(/bg/3.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}bg/3.png)`,
       }}
     >
       {/* Top & Bottom Vanishing Transitions */}
@@ -420,3 +420,4 @@ export const BookshelfProjects: React.FC = () => {
     </section>
   );
 };
+

@@ -19,7 +19,7 @@ export const EducationArchive: React.FC = () => {
       id="education" 
       className="relative py-32 px-4 sm:px-8 lg:px-12 overflow-hidden bg-cover bg-center"
       style={{
-        backgroundImage: 'url(/bg/6.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}bg/6.png)`,
       }}
     >
       {/* Top & Bottom Vanishing Transitions */}
@@ -207,3 +207,4 @@ export const EducationArchive: React.FC = () => {
     </section>
   );
 };
+

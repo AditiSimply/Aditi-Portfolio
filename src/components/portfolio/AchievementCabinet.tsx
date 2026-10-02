@@ -37,7 +37,7 @@ export const AchievementCabinet: React.FC = () => {
       id="achievements" 
       className="relative py-36 px-4 sm:px-8 lg:px-12 overflow-hidden bg-cover bg-center text-white"
       style={{
-        backgroundImage: 'url(/bg/7.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}bg/7.png)`,
       }}
     >
       {/* Top & Bottom Vanishing Transitions */}
@@ -381,3 +381,4 @@ export const AchievementCabinet: React.FC = () => {
     </section>
   );
 };
+

@@ -66,7 +66,7 @@ export const ContactChannel: React.FC = () => {
       id="contact" 
       className="relative py-32 px-4 sm:px-8 lg:px-12 overflow-hidden bg-cover bg-center"
       style={{
-        backgroundImage: 'url(/bg/8.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}bg/8.png)`,
       }}
     >
       {/* Top & Bottom Vanishing Transitions */}
@@ -371,3 +371,4 @@ export const ContactChannel: React.FC = () => {
     </section>
   );
 };
+

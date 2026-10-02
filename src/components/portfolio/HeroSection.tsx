@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
       onMouseMove={handleMouseMove}
       className="relative min-h-[95vh] pt-28 sm:pt-32 pb-28 flex items-center justify-center px-4 sm:px-8 lg:px-12 overflow-hidden bg-cover bg-center"
       style={{
-        backgroundImage: 'url(/bg/1.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}bg/1.png)`,
       }}
     >
       {/* Bottom Vanishing Mist Transition */}
@@ -152,3 +152,4 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
+

@@ -48,7 +48,7 @@ export const SkillLaboratory: React.FC = () => {
       id="skills" 
       className="relative py-32 px-4 sm:px-8 lg:px-12 overflow-hidden bg-cover bg-center"
       style={{
-        backgroundImage: 'url(/bg/4.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}bg/4.png)`,
       }}
     >
       {/* Top & Bottom Vanishing Transitions */}
@@ -257,3 +257,4 @@ export const SkillLaboratory: React.FC = () => {
     </section>
   );
 };
+
