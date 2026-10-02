@@ -65,7 +65,7 @@ export const EducationArchive: React.FC = () => {
           {/* Panoramic Campus Environment Background */}
           <div className="relative rounded-2xl overflow-hidden min-h-[440px] flex flex-col justify-between p-4 sm:p-6">
             <img 
-              src="/assets/editorial/education_campus.jpg" 
+              src={`${import.meta.env.BASE_URL}assets/editorial/education_campus.jpg`} 
               alt="Architectural university campus landscape and pathway"
               className="absolute inset-0 w-full h-full object-cover object-bottom brightness-[0.94] contrast-[1.02]"
             />
